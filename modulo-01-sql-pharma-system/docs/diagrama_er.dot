@@ -1,0 +1,125 @@
+digraph PharmaSystem_ER {
+    rankdir=LR;
+    graph [
+        fontname="Helvetica",
+        bgcolor="white",
+        splines=polyline,
+        nodesep=0.5,
+        ranksep=0.9,
+        pad=0.3
+    ];
+    node [
+        shape=none,
+        fontname="Helvetica",
+        fontsize=11
+    ];
+    edge [
+        fontname="Helvetica",
+        fontsize=9,
+        color="#555555",
+        arrowsize=0.8
+    ];
+
+    // ================== TABELAS ==================
+
+    FILIAIS [label=<
+        <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6">
+            <TR><TD BGCOLOR="#1F6091" COLSPAN="2"><FONT COLOR="white"><B>FILIAIS</B></FONT></TD></TR>
+            <TR><TD ALIGN="LEFT"><B>id</B></TD><TD ALIGN="LEFT">PK (int)</TD></TR>
+            <TR><TD ALIGN="LEFT">codigo</TD><TD ALIGN="LEFT">UK varchar(10)</TD></TR>
+            <TR><TD ALIGN="LEFT">nome</TD><TD ALIGN="LEFT">varchar(100)</TD></TR>
+            <TR><TD ALIGN="LEFT">cidade</TD><TD ALIGN="LEFT">varchar(80)</TD></TR>
+            <TR><TD ALIGN="LEFT">estado</TD><TD ALIGN="LEFT">char(2)</TD></TR>
+            <TR><TD ALIGN="LEFT">endereco</TD><TD ALIGN="LEFT">varchar(200)</TD></TR>
+            <TR><TD ALIGN="LEFT">telefone</TD><TD ALIGN="LEFT">varchar(20)</TD></TR>
+            <TR><TD ALIGN="LEFT">data_abertura</TD><TD ALIGN="LEFT">date</TD></TR>
+            <TR><TD ALIGN="LEFT">ativa</TD><TD ALIGN="LEFT">boolean</TD></TR>
+        </TABLE>
+    >];
+
+    CATEGORIAS [label=<
+        <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6">
+            <TR><TD BGCOLOR="#2E7D32" COLSPAN="2"><FONT COLOR="white"><B>CATEGORIAS</B></FONT></TD></TR>
+            <TR><TD ALIGN="LEFT"><B>id</B></TD><TD ALIGN="LEFT">PK (int)</TD></TR>
+            <TR><TD ALIGN="LEFT">nome</TD><TD ALIGN="LEFT">UK varchar(80)</TD></TR>
+            <TR><TD ALIGN="LEFT">descricao</TD><TD ALIGN="LEFT">text</TD></TR>
+        </TABLE>
+    >];
+
+    PRODUTOS [label=<
+        <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6">
+            <TR><TD BGCOLOR="#2E7D32" COLSPAN="2"><FONT COLOR="white"><B>PRODUTOS</B></FONT></TD></TR>
+            <TR><TD ALIGN="LEFT"><B>id</B></TD><TD ALIGN="LEFT">PK (int)</TD></TR>
+            <TR><TD ALIGN="LEFT">codigo_barras</TD><TD ALIGN="LEFT">UK varchar(20)</TD></TR>
+            <TR><TD ALIGN="LEFT">nome</TD><TD ALIGN="LEFT">varchar(150)</TD></TR>
+            <TR><TD ALIGN="LEFT"><I>categoria_id</I></TD><TD ALIGN="LEFT">FK (int)</TD></TR>
+            <TR><TD ALIGN="LEFT">fabricante</TD><TD ALIGN="LEFT">varchar(100)</TD></TR>
+            <TR><TD ALIGN="LEFT">preco_custo</TD><TD ALIGN="LEFT">decimal(10,2)</TD></TR>
+            <TR><TD ALIGN="LEFT">preco_venda</TD><TD ALIGN="LEFT">decimal(10,2)</TD></TR>
+            <TR><TD ALIGN="LEFT">estoque_minimo</TD><TD ALIGN="LEFT">int</TD></TR>
+            <TR><TD ALIGN="LEFT">exige_receita</TD><TD ALIGN="LEFT">boolean</TD></TR>
+            <TR><TD ALIGN="LEFT">ativo</TD><TD ALIGN="LEFT">boolean</TD></TR>
+        </TABLE>
+    >];
+
+    ESTOQUE [label=<
+        <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6">
+            <TR><TD BGCOLOR="#6A1B9A" COLSPAN="2"><FONT COLOR="white"><B>ESTOQUE</B></FONT></TD></TR>
+            <TR><TD ALIGN="LEFT"><B>id</B></TD><TD ALIGN="LEFT">PK (int)</TD></TR>
+            <TR><TD ALIGN="LEFT"><I>produto_id</I></TD><TD ALIGN="LEFT">FK (int)</TD></TR>
+            <TR><TD ALIGN="LEFT"><I>filial_id</I></TD><TD ALIGN="LEFT">FK (int)</TD></TR>
+            <TR><TD ALIGN="LEFT">quantidade</TD><TD ALIGN="LEFT">int</TD></TR>
+            <TR><TD ALIGN="LEFT">data_atualizacao</TD><TD ALIGN="LEFT">timestamp</TD></TR>
+        </TABLE>
+    >];
+
+    CLIENTES [label=<
+        <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6">
+            <TR><TD BGCOLOR="#EF6C00" COLSPAN="2"><FONT COLOR="white"><B>CLIENTES</B></FONT></TD></TR>
+            <TR><TD ALIGN="LEFT"><B>id</B></TD><TD ALIGN="LEFT">PK (int)</TD></TR>
+            <TR><TD ALIGN="LEFT">nome</TD><TD ALIGN="LEFT">varchar(150)</TD></TR>
+            <TR><TD ALIGN="LEFT">cpf</TD><TD ALIGN="LEFT">UK varchar(14)</TD></TR>
+            <TR><TD ALIGN="LEFT">email</TD><TD ALIGN="LEFT">varchar(120)</TD></TR>
+            <TR><TD ALIGN="LEFT">telefone</TD><TD ALIGN="LEFT">varchar(20)</TD></TR>
+            <TR><TD ALIGN="LEFT">data_nascimento</TD><TD ALIGN="LEFT">date</TD></TR>
+            <TR><TD ALIGN="LEFT">cidade</TD><TD ALIGN="LEFT">varchar(80)</TD></TR>
+            <TR><TD ALIGN="LEFT">estado</TD><TD ALIGN="LEFT">char(2)</TD></TR>
+        </TABLE>
+    >];
+
+    VENDAS [label=<
+        <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6">
+            <TR><TD BGCOLOR="#C62828" COLSPAN="2"><FONT COLOR="white"><B>VENDAS</B></FONT></TD></TR>
+            <TR><TD ALIGN="LEFT"><B>id</B></TD><TD ALIGN="LEFT">PK (int)</TD></TR>
+            <TR><TD ALIGN="LEFT"><I>filial_id</I></TD><TD ALIGN="LEFT">FK (int)</TD></TR>
+            <TR><TD ALIGN="LEFT"><I>cliente_id</I></TD><TD ALIGN="LEFT">FK (int)</TD></TR>
+            <TR><TD ALIGN="LEFT">data_venda</TD><TD ALIGN="LEFT">timestamp</TD></TR>
+            <TR><TD ALIGN="LEFT">valor_total</TD><TD ALIGN="LEFT">decimal(10,2)</TD></TR>
+            <TR><TD ALIGN="LEFT">desconto</TD><TD ALIGN="LEFT">decimal(10,2)</TD></TR>
+            <TR><TD ALIGN="LEFT">forma_pagamento</TD><TD ALIGN="LEFT">varchar(20)</TD></TR>
+            <TR><TD ALIGN="LEFT">status</TD><TD ALIGN="LEFT">varchar(20)</TD></TR>
+        </TABLE>
+    >];
+
+    ITENS_VENDA [label=<
+        <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6">
+            <TR><TD BGCOLOR="#C62828" COLSPAN="2"><FONT COLOR="white"><B>ITENS_VENDA</B></FONT></TD></TR>
+            <TR><TD ALIGN="LEFT"><B>id</B></TD><TD ALIGN="LEFT">PK (int)</TD></TR>
+            <TR><TD ALIGN="LEFT"><I>venda_id</I></TD><TD ALIGN="LEFT">FK (int)</TD></TR>
+            <TR><TD ALIGN="LEFT"><I>produto_id</I></TD><TD ALIGN="LEFT">FK (int)</TD></TR>
+            <TR><TD ALIGN="LEFT">quantidade</TD><TD ALIGN="LEFT">int</TD></TR>
+            <TR><TD ALIGN="LEFT">preco_unitario</TD><TD ALIGN="LEFT">decimal(10,2)</TD></TR>
+            <TR><TD ALIGN="LEFT">subtotal</TD><TD ALIGN="LEFT">decimal(10,2)</TD></TR>
+        </TABLE>
+    >];
+
+    // ================== RELACIONAMENTOS ==================
+
+    CATEGORIAS -> PRODUTOS    [label="1 : N", arrowhead=crow, arrowtail=none];
+    PRODUTOS   -> ITENS_VENDA [label="1 : N", arrowhead=crow, arrowtail=none];
+    PRODUTOS   -> ESTOQUE     [label="1 : N", arrowhead=crow, arrowtail=none];
+    FILIAIS    -> ESTOQUE     [label="1 : N", arrowhead=crow, arrowtail=none];
+    FILIAIS    -> VENDAS      [label="1 : N", arrowhead=crow, arrowtail=none];
+    CLIENTES   -> VENDAS      [label="0 : N", arrowhead=crow, arrowtail=odot];
+    VENDAS     -> ITENS_VENDA [label="1 : N", arrowhead=crow, arrowtail=none];
+}
