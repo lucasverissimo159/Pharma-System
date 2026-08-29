@@ -1603,3 +1603,7 @@ Semana  Módulo                    Foco Principal               Entrega Chave
 **3. Se travar em um módulo, simplifique o escopo, não atrase.** Melhor entregar 15 consultas SQL do que não publicar nada porque queria fazer 30. Você pode sempre voltar e melhorar depois.
 
 **4. O README é tão importante quanto o código.** Recrutadores raramente leem o código inteiro. Eles leem o README. Dedique tempo a ele.
+
+**5. Cada post no LinkedIn deve contar uma história:** qual era o problema → o que você fez → o que aprendeu. Não seja técnico demais; pense no recrutador que não é programador.
+
+**6. Mantenha um arquivo de "aprendizados" pessoal.** Anote erros, soluções, e insights de cada semana. Ao final das 12 semanas, esse material é ouro para entrevistas: "na semana 4, enfrentei um problema de idempotência no ETL e resolvi com UPSERT" demonstra maturidade técnica.
