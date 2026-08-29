@@ -1607,7 +1607,3 @@ Week Module Main Focus Key Delivery
 **5. Every LinkedIn post should tell a story:** what the problem was → what you did → what you learned. Don't be too technical; think about the recruiter who is not a programmer.
 
 **6. Keep a personal “learnings” file.** Write down mistakes, solutions, and insights from each week. At the end of the 12 weeks, this material is interview gold: "in week 4, I faced an idempotence problem in ETL and solved it with UPSERT" demonstrates technical maturity.
-
-**5. Cada post no LinkedIn deve contar uma história:** qual era o problema → o que você fez → o que aprendeu. Não seja técnico demais; pense no recrutador que não é programador.
-
-**6. Mantenha um arquivo de "aprendizados" pessoal.** Anote erros, soluções, e insights de cada semana. Ao final das 12 semanas, esse material é ouro para entrevistas: "na semana 4, enfrentei um problema de idempotência no ETL e resolvi com UPSERT" demonstra maturidade técnica.
