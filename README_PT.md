@@ -1,7 +1,3 @@
----
-
-# Versão em Português
-
 # Apostila — Portfólio de Engenharia de Sistemas em 12 Semanas
 
 **Projeto Guarda-Chuva: PharmaSystem — Sistema de Gestão para Rede de Farmácias**
