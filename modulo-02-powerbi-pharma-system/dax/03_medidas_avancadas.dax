@@ -1,0 +1,209 @@
+// ============================================================================
+// PharmaSystem - Medidas DAX Avancadas
+// ----------------------------------------------------------------------------
+// Nivel: AVANCADO
+// Conceitos: RANKX, ALL, ALLEXCEPT, VAR, TOPN, CROSSFILTER, FILTER complexo
+// Uso: rankings, participacao, comparativos entre grupos, KPIs contextuais
+// ============================================================================
+
+
+// ----------------------------------------------------------------------------
+// M22 - Ranking Filial
+// ----------------------------------------------------------------------------
+// Objetivo: posicao da filial no ranking de faturamento.
+// Formato: Numero inteiro
+// Tecnica: RANKX + ALL para ignorar filtros da propria filial no ranking.
+// Uso:     mostrar em cartao ao selecionar uma filial (ex: "Ranking: #3").
+// ----------------------------------------------------------------------------
+Ranking Filial =
+RANKX (
+    ALL ( filiais[nome] ),
+    [Faturamento Total],
+    ,
+    DESC,
+    Dense
+)
+
+
+// ----------------------------------------------------------------------------
+// M23 - Ranking Produto
+// ----------------------------------------------------------------------------
+// Objetivo: posicao do produto no ranking de faturamento.
+// Formato: Numero inteiro
+// ----------------------------------------------------------------------------
+Ranking Produto =
+RANKX (
+    ALL ( produtos[nome] ),
+    [Faturamento Total],
+    ,
+    DESC,
+    Dense
+)
+
+
+// ----------------------------------------------------------------------------
+// M24 - Percentual do Total (participacao)
+// ----------------------------------------------------------------------------
+// Objetivo: quanto o item filtrado representa do faturamento geral.
+// Formato: Percentual, 2 casas decimais
+// Tecnica: ALL para remover filtros e obter o total geral.
+// Uso:     colocar em tabelas ou gráficos de barras como coluna auxiliar.
+// ----------------------------------------------------------------------------
+Percentual do Total =
+DIVIDE (
+    [Faturamento Total],
+    CALCULATE ( [Faturamento Total], ALL ( filiais ), ALL ( produtos ) ),
+    0
+)
+
+
+// ----------------------------------------------------------------------------
+// M25 - Faturamento Top 10 Produtos
+// ----------------------------------------------------------------------------
+// Objetivo: faturamento acumulado dos 10 produtos mais vendidos.
+// Formato: Moeda (R$), 2 casas decimais
+// Tecnica: TOPN + SUMX. Util para calcular concentracao (regra 80/20).
+// ----------------------------------------------------------------------------
+Faturamento Top 10 Produtos =
+SUMX (
+    TOPN (
+        10,
+        ALL ( produtos[nome] ),
+        [Faturamento Total],
+        DESC
+    ),
+    [Faturamento Total]
+)
+
+
+// ----------------------------------------------------------------------------
+// M26 - Concentracao Top 10 %
+// ----------------------------------------------------------------------------
+// Objetivo: quanto os 10 produtos mais vendidos representam do total.
+// Formato: Percentual, 2 casas decimais
+// Interpretacao: se >= 60% ha alta concentracao (risco).
+// ----------------------------------------------------------------------------
+Concentracao Top 10 % =
+DIVIDE (
+    [Faturamento Top 10 Produtos],
+    CALCULATE ( [Faturamento Total], ALL ( produtos ) ),
+    0
+)
+
+
+// ----------------------------------------------------------------------------
+// M27 - Produto Mais Vendido (nome)
+// ----------------------------------------------------------------------------
+// Objetivo: retorna o nome do produto lider no contexto atual.
+// Formato: Texto
+// Tecnica: TOPN + CONCATENATEX (concat elementos em string).
+// Uso:     cartao "O campeao do mes e: XYZ".
+// ----------------------------------------------------------------------------
+Produto Mais Vendido =
+CONCATENATEX (
+    TOPN (
+        1,
+        VALUES ( produtos[nome] ),
+        [Faturamento Total],
+        DESC
+    ),
+    produtos[nome],
+    ", "
+)
+
+
+// ----------------------------------------------------------------------------
+// M28 - Filial Mais Vendedora (nome)
+// ----------------------------------------------------------------------------
+// Objetivo: nome da filial com maior faturamento no contexto.
+// Formato: Texto
+// ----------------------------------------------------------------------------
+Filial Mais Vendedora =
+CONCATENATEX (
+    TOPN (
+        1,
+        VALUES ( filiais[nome] ),
+        [Faturamento Total],
+        DESC
+    ),
+    filiais[nome],
+    ", "
+)
+
+
+// ----------------------------------------------------------------------------
+// M29 - Ticket Medio da Rede (referencia global)
+// ----------------------------------------------------------------------------
+// Objetivo: ticket medio da rede toda, ignorando filtros de filial/produto.
+// Formato: Moeda (R$), 2 casas decimais
+// Uso:     comparativo: "esta filial tem ticket X% acima da media".
+// ----------------------------------------------------------------------------
+Ticket Medio da Rede =
+CALCULATE (
+    [Ticket Medio],
+    ALL ( filiais ),
+    ALL ( produtos ),
+    ALL ( categorias )
+)
+
+
+// ----------------------------------------------------------------------------
+// M30 - Ticket Medio vs Rede %
+// ----------------------------------------------------------------------------
+// Objetivo: quanto o ticket medio atual difere da media geral.
+// Formato: Percentual, 2 casas decimais
+// Interpretacao: valores positivos = acima da media da rede.
+// ----------------------------------------------------------------------------
+Ticket Medio vs Rede % =
+DIVIDE (
+    [Ticket Medio] - [Ticket Medio da Rede],
+    [Ticket Medio da Rede],
+    0
+)
+
+
+// ----------------------------------------------------------------------------
+// M31 - Novos Clientes (do periodo)
+// ----------------------------------------------------------------------------
+// Objetivo: clientes cujo data_cadastro cai dentro do contexto de tempo.
+// Formato: Numero inteiro
+// Uso:     KPI de aquisicao mensal/anual.
+// ----------------------------------------------------------------------------
+Novos Clientes =
+CALCULATE (
+    COUNTROWS ( clientes ),
+    USERELATIONSHIP ( clientes[data_cadastro], calendario[data] )
+)
+// NOTA: e necessario criar um relacionamento inativo entre
+//       clientes[data_cadastro] e calendario[data] no modelo,
+//       depois ativa-lo via USERELATIONSHIP nesta medida.
+
+
+// ----------------------------------------------------------------------------
+// M32 - Rotulo Dinamico do KPI (texto formatado)
+// ----------------------------------------------------------------------------
+// Objetivo: gera texto amigavel para exibir num cartao (ex: "R$ 42,4 mil").
+// Formato: Texto
+// Tecnica: FORMAT + SWITCH para escolher unidade (mil, milhao).
+// ----------------------------------------------------------------------------
+Rotulo Faturamento =
+VAR FatValor = [Faturamento Total]
+RETURN
+    SWITCH (
+        TRUE (),
+        FatValor >= 1000000, FORMAT ( FatValor / 1000000, "R$ #,##0.0" ) & " mi",
+        FatValor >= 1000,    FORMAT ( FatValor / 1000,    "R$ #,##0.0" ) & " mil",
+        FORMAT ( FatValor, "R$ #,##0.00" )
+    )
+
+
+// ============================================================================
+// FIM - Medidas Avancadas (11 medidas)
+// Total do modulo: 32 medidas
+// ============================================================================
+// PROXIMOS PASSOS:
+//   - Testar cada medida no Power BI colocando em uma tabela simples.
+//   - Formatar cada medida (Moeda / Numero / Percentual) na guia Formatacao.
+//   - Organizar em pastas (pasta > "KPIs Principais", "Time Intelligence", etc)
+//     via botao direito na medida > Nova pasta.
+// ============================================================================

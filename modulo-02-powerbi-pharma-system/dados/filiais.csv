@@ -1,0 +1,16 @@
+﻿id,codigo,nome,cidade,estado,endereco,telefone,data_abertura,ativa
+1,FIL001,PharmaMinas Centro Montes Claros,Montes Claros,MG,"Av. Cula Mangabeira, 1200",(38) 3221-1001,2015-03-10,Sim
+2,FIL002,PharmaMinas Todos os Santos,Montes Claros,MG,"Rua Correia Machado, 890",(38) 3221-1002,2016-07-22,Sim
+3,FIL003,PharmaMinas Ibituruna,Montes Claros,MG,"Av. Deputado Esteves, 450",(38) 3221-1003,2017-05-15,Sim
+4,FIL004,PharmaMinas Major Prates,Montes Claros,MG,"Av. Mestra Fininha, 1500",(38) 3221-1004,2018-11-08,Sim
+5,FIL005,PharmaMinas Bocaiuva,Bocaiuva,MG,"Praca da Matriz, 100",(38) 3251-2001,2018-02-14,Sim
+6,FIL006,PharmaMinas Janauba,Janauba,MG,"Rua Bias Fortes, 350",(38) 3821-3001,2019-04-30,Sim
+7,FIL007,PharmaMinas Salinas,Salinas,MG,"Av. Rio Branco, 800",(38) 3841-4001,2019-08-12,Sim
+8,FIL008,PharmaMinas Pirapora,Pirapora,MG,"Praca Melo Viana, 200",(38) 3741-5001,2020-01-20,Sim
+9,FIL009,PharmaMinas Belo Horizonte Savassi,Belo Horizonte,MG,"Rua Pernambuco, 1120",(31) 3221-6001,2020-06-05,Sim
+10,FIL010,PharmaMinas Uberlandia Centro,Uberlandia,MG,"Av. Afonso Pena, 2500",(34) 3221-7001,2021-03-18,Sim
+11,FIL011,PharmaMinas Diamantina,Diamantina,MG,"Rua da Quitanda, 45",(38) 3531-8001,2021-09-22,Sim
+12,FIL012,PharmaMinas Grao Mogol,Grao Mogol,MG,"Praca Central, 15",(38) 3238-9001,2022-02-10,Sim
+13,FIL013,PharmaMinas Buritizeiro,Buritizeiro,MG,"Rua Sao Francisco, 220",(38) 3742-1101,2022-08-15,Sim
+14,FIL014,PharmaMinas Corinto,Corinto,MG,"Av. Getulio Vargas, 600",(38) 3751-1201,2023-05-20,Sim
+15,FIL015,PharmaMinas Curvelo,Curvelo,MG,"Rua Coronel Prates, 340",(38) 3721-1301,2024-01-15,Sim

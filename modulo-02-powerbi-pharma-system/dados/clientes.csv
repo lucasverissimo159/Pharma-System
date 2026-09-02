@@ -1,0 +1,201 @@
+﻿id,nome,cpf,email,telefone,data_nascimento,cidade,estado,data_cadastro
+1,Nicolas Costa Ribeiro,000.000.001-62,nicolas.costa1@gmail.com,(38) 94625-3390,2007-01-31,Pirapora,MG,2025-07-20
+2,Sabrina Barbosa Cardoso,000.000.002-63,sabrina.barbosa2@outlook.com,(31) 94214-6404,1987-11-26,Uberlandia,MG,2025-08-06
+3,Pedro Nascimento Lopes,000.000.003-93,pedro.nascimento3@outlook.com,(34) 99005-9037,1967-03-13,Janauba,MG,2026-01-20
+4,Camila Ferreira Rodrigues,000.000.004-79,camila.ferreira4@yahoo.com.br,(31) 99882-1962,1961-07-14,Montes Claros,MG,2026-05-09
+5,Eduarda Correia Nunes,000.000.005-16,eduarda.correia5@gmail.com,(34) 93252-4791,2002-06-10,Curvelo,MG,2024-06-03
+6,Ana Alves Araujo,000.000.006-68,ana.alves6@outlook.com,(31) 98916-8993,2007-02-16,Montes Claros,MG,2025-06-28
+7,Patricia Almeida Silva,000.000.007-12,patricia.almeida7@outlook.com,(38) 95697-1280,1963-06-26,Januaria,MG,2025-12-15
+8,Beatriz Almeida Cavalcanti,000.000.008-32,beatriz.almeida8@gmail.com,(31) 99591-3439,1986-12-02,Salinas,MG,2025-09-26
+9,Natalia Lima Correia,000.000.009-55,natalia.lima9@outlook.com,(34) 92294-7112,1972-02-11,Diamantina,MG,2025-08-01
+10,Pedro Mendes Pereira,000.000.010-48,pedro.mendes10@gmail.com,(38) 91519-2531,1972-03-06,Uberlandia,MG,2025-01-21
+11,Patricia Nascimento Santos,000.000.011-91,patricia.nascimento11@gmail.com,(38) 93807-2354,1963-09-11,Januaria,MG,2025-03-20
+12,Yasmin Cavalcanti Ribeiro,000.000.012-82,yasmin.cavalcanti12@gmail.com,(38) 91697-4764,1989-07-28,Espinosa,MG,2026-06-07
+13,Cesar Barbosa Nascimento,000.000.013-44,cesar.barbosa13@gmail.com,(31) 95593-9897,1957-12-25,Corinto,MG,2024-02-03
+14,Lucas Machado Ribeiro,000.000.014-12,lucas.machado14@hotmail.com,(38) 93362-7525,2001-08-20,Pirapora,MG,2024-06-15
+15,Rodrigo Pereira Barbosa,000.000.015-59,rodrigo.pereira15@outlook.com,(34) 93292-2284,1963-08-12,Curvelo,MG,2024-12-20
+16,Daniel Souza Almeida,000.000.016-39,daniel.souza16@gmail.com,(34) 97499-6347,2005-11-18,Corinto,MG,2024-10-06
+17,Isadora Nascimento Pereira,000.000.017-55,isadora.nascimento17@yahoo.com.br,(34) 94043-7227,2000-11-06,Sao Francisco,MG,2025-09-25
+18,Tatiana Cavalcanti Pereira,000.000.018-19,tatiana.cavalcanti18@gmail.com,(34) 93526-7225,1951-09-02,Janauba,MG,2026-01-27
+19,Elisa Ribeiro Costa,000.000.019-23,elisa.ribeiro19@gmail.com,(31) 96050-8286,1976-04-01,Sao Francisco,MG,2024-10-03
+20,Gabriela Rodrigues Oliveira,000.000.020-33,gabriela.rodrigues20@yahoo.com.br,(34) 99395-7685,1999-04-10,Montes Claros,MG,2024-04-01
+21,Camila Lopes Oliveira,000.000.021-86,camila.lopes21@outlook.com,(34) 91202-5781,1971-06-01,Uberlandia,MG,2026-03-08
+22,Fabio Cardoso Lopes,000.000.022-41,fabio.cardoso22@hotmail.com,(38) 97237-3777,1996-01-31,Pirapora,MG,2024-11-04
+23,Samuel Nascimento Rodrigues,000.000.023-18,samuel.nascimento23@hotmail.com,(34) 95521-7899,1981-08-24,Diamantina,MG,2026-03-12
+24,Eduarda Costa Lima,000.000.024-41,eduarda.costa24@yahoo.com.br,(38) 94203-8501,1998-12-10,Janauba,MG,2024-11-07
+25,Ana Martins Ribeiro,000.000.025-89,ana.martins25@yahoo.com.br,(34) 98212-6484,1969-11-27,Januaria,MG,2026-04-23
+26,Yasmin Rocha Rodrigues,000.000.026-48,yasmin.rocha26@outlook.com,(38) 94290-8848,1980-05-08,Janauba,MG,2025-02-11
+27,Amanda Gomes Cardoso,000.000.027-98,amanda.gomes27@yahoo.com.br,(38) 94971-6339,1974-10-20,Pirapora,MG,2026-04-16
+28,Felipe Costa Souza,000.000.028-82,felipe.costa28@hotmail.com,(38) 99939-3947,1959-03-10,Montes Claros,MG,2026-01-14
+29,Julia Mendes Alves,000.000.029-66,julia.mendes29@outlook.com,(38) 92133-7703,1963-09-29,Janauba,MG,2025-10-10
+30,Vinicius Pereira Lima,000.000.030-94,vinicius.pereira30@hotmail.com,(38) 97932-7176,2001-11-26,Diamantina,MG,2025-09-04
+31,Kaique Barbosa Martins,000.000.031-78,kaique.barbosa31@yahoo.com.br,(38) 91602-6890,1960-05-15,Buritizeiro,MG,2025-10-15
+32,Fabio Souza Freitas,000.000.032-41,fabio.souza32@outlook.com,(31) 91725-7547,1978-10-16,Sao Francisco,MG,2025-03-16
+33,Gabriela Silva Souza,000.000.033-43,gabriela.silva33@hotmail.com,(38) 99499-4621,1968-07-18,Belo Horizonte,MG,2025-02-04
+34,Julia Freitas Nunes,000.000.034-85,julia.freitas34@hotmail.com,(34) 91402-8909,1999-02-28,Pirapora,MG,2025-03-01
+35,Fabio Souza Correia,000.000.035-28,fabio.souza35@outlook.com,(34) 96620-8460,1989-12-24,Grao Mogol,MG,2025-05-09
+36,Camila Nascimento Souza,000.000.036-66,camila.nascimento36@yahoo.com.br,(34) 92100-5919,2004-07-12,Sao Francisco,MG,2025-12-28
+37,Henrique Silva Machado,000.000.037-53,henrique.silva37@gmail.com,(38) 93692-4996,1962-03-31,Janauba,MG,2025-07-19
+38,Karina Ribeiro Lopes,000.000.038-64,karina.ribeiro38@yahoo.com.br,(31) 97636-4022,1991-10-26,Corinto,MG,2025-11-04
+39,Hugo Martins Silva,000.000.039-88,hugo.martins39@hotmail.com,(34) 98037-7370,2008-02-21,Curvelo,MG,2024-08-07
+40,Nicolas Lima Freitas,000.000.040-18,nicolas.lima40@gmail.com,(38) 94063-6993,1979-04-18,Salinas,MG,2025-04-13
+41,Henrique Lima Nunes,000.000.041-72,henrique.lima41@outlook.com,(38) 97367-7431,1955-11-17,Bocaiuva,MG,2024-12-22
+42,Camila Machado Carvalho,000.000.042-89,camila.machado42@hotmail.com,(38) 95873-2388,1996-07-09,Belo Horizonte,MG,2024-04-30
+43,Pedro Gomes Souza,000.000.043-33,pedro.gomes43@outlook.com,(38) 93316-9369,1973-09-08,Uberlandia,MG,2025-09-02
+44,Isabela Barbosa Martins,000.000.044-64,isabela.barbosa44@hotmail.com,(34) 99804-3838,1958-10-03,Janauba,MG,2025-05-16
+45,Tatiana Rodrigues Ferreira,000.000.045-50,tatiana.rodrigues45@yahoo.com.br,(38) 91878-6882,2007-09-05,Diamantina,MG,2024-05-19
+46,Mariana Correia Martins,000.000.046-81,mariana.correia46@yahoo.com.br,(34) 99056-7809,1968-09-19,Diamantina,MG,2024-06-20
+47,Fabio Barbosa Silva,000.000.047-38,fabio.barbosa47@outlook.com,(31) 95503-4683,1960-04-22,Pirapora,MG,2024-06-21
+48,Heloisa Carvalho Barbosa,000.000.048-73,heloisa.carvalho48@gmail.com,(38) 92871-5389,1959-10-25,Januaria,MG,2025-01-10
+49,Otavio Correia Freitas,000.000.049-15,otavio.correia49@yahoo.com.br,(38) 94580-7965,1999-05-09,Curvelo,MG,2026-04-29
+50,Yasmin Freitas Pereira,000.000.050-48,yasmin.freitas50@gmail.com,(34) 95305-6711,2000-09-25,Diamantina,MG,2026-06-05
+51,Henrique Freitas Cavalcanti,000.000.051-40,henrique.freitas51@hotmail.com,(38) 96744-8015,1993-08-25,Buritizeiro,MG,2024-05-22
+52,Nicolas Correia Alves,000.000.052-17,nicolas.correia52@outlook.com,(38) 95605-9827,1993-06-07,Belo Horizonte,MG,2025-12-21
+53,Tatiana Gomes Barbosa,000.000.053-44,tatiana.gomes53@gmail.com,(31) 97743-1971,1983-08-29,Januaria,MG,2025-11-02
+54,Isabela Mendes Machado,000.000.054-26,isabela.mendes54@hotmail.com,(31) 96277-5055,1973-04-22,Diamantina,MG,2024-05-25
+55,Rodrigo Dias Lima,000.000.055-90,rodrigo.dias55@yahoo.com.br,(34) 98405-2237,1951-09-11,Sao Francisco,MG,2026-06-20
+56,Heloisa Oliveira Martins,000.000.056-75,heloisa.oliveira56@outlook.com,(38) 97046-8449,1964-10-02,Belo Horizonte,MG,2025-08-18
+57,Ana Machado Freitas,000.000.057-21,ana.machado57@yahoo.com.br,(38) 96869-2037,1960-08-04,Uberlandia,MG,2024-08-11
+58,Hugo Correia Alves,000.000.058-73,hugo.correia58@outlook.com,(34) 95646-6533,1959-06-09,Buritizeiro,MG,2024-05-13
+59,Rodrigo Machado Nascimento,000.000.059-53,rodrigo.machado59@gmail.com,(31) 92631-8529,2007-01-29,Bocaiuva,MG,2026-05-28
+60,Karina Carvalho Carvalho,000.000.060-10,karina.carvalho60@yahoo.com.br,(31) 93161-5945,1994-04-11,Januaria,MG,2026-06-16
+61,Samuel Oliveira Dias,000.000.061-56,samuel.oliveira61@outlook.com,(31) 97092-3711,2003-11-23,Uberlandia,MG,2025-10-02
+62,Vinicius Cardoso Mendes,000.000.062-39,vinicius.cardoso62@yahoo.com.br,(38) 92494-2559,2008-06-10,Salinas,MG,2025-05-03
+63,Eduarda Rodrigues Barbosa,000.000.063-38,eduarda.rodrigues63@yahoo.com.br,(31) 91132-6629,1997-09-20,Januaria,MG,2025-03-08
+64,Cesar Rodrigues Nascimento,000.000.064-19,cesar.rodrigues64@hotmail.com,(34) 92463-2678,1999-04-13,Belo Horizonte,MG,2025-01-11
+65,Vinicius Rodrigues Martins,000.000.065-27,vinicius.rodrigues65@hotmail.com,(31) 99691-1138,1953-10-14,Corinto,MG,2024-06-17
+66,Isadora Costa Cardoso,000.000.066-37,isadora.costa66@hotmail.com,(34) 98248-4559,2000-10-05,Espinosa,MG,2024-04-12
+67,Isabela Freitas Souza,000.000.067-85,isabela.freitas67@yahoo.com.br,(34) 98035-6152,1995-12-30,Salinas,MG,2024-10-10
+68,Yasmin Oliveira Pereira,000.000.068-80,yasmin.oliveira68@outlook.com,(38) 91439-5942,1990-02-08,Grao Mogol,MG,2025-09-13
+69,Marcos Alves Cardoso,000.000.069-60,marcos.alves69@outlook.com,(38) 91894-4921,1964-02-21,Uberlandia,MG,2024-04-25
+70,Pedro Nascimento Dias,000.000.070-86,pedro.nascimento70@gmail.com,(38) 91197-6916,1980-02-23,Janauba,MG,2025-01-31
+71,Rodrigo Almeida Costa,000.000.071-79,rodrigo.almeida71@hotmail.com,(34) 92195-1273,1955-11-05,Bocaiuva,MG,2024-01-15
+72,Rafaela Alves Santos,000.000.072-17,rafaela.alves72@yahoo.com.br,(38) 95693-9209,1971-04-09,Uberlandia,MG,2025-12-19
+73,Felipe Oliveira Dias,000.000.073-78,felipe.oliveira73@hotmail.com,(34) 92369-6077,2001-06-13,Grao Mogol,MG,2024-07-27
+74,Joao Lopes Ribeiro,000.000.074-60,joao.lopes74@gmail.com,(34) 98167-4909,2003-05-06,Salinas,MG,2024-03-29
+75,Hugo Souza Carvalho,000.000.075-88,hugo.souza75@gmail.com,(34) 93877-2956,2007-05-27,Curvelo,MG,2024-05-20
+76,Cesar Silva Ferreira,000.000.076-73,cesar.silva76@outlook.com,(38) 99474-5247,1993-07-23,Belo Horizonte,MG,2024-05-09
+77,Fernanda Freitas Machado,000.000.077-44,fernanda.freitas77@gmail.com,(31) 96488-8034,1984-02-20,Grao Mogol,MG,2024-03-06
+78,Rafaela Mendes Barbosa,000.000.078-90,rafaela.mendes78@gmail.com,(34) 98457-9368,1976-03-25,Montes Claros,MG,2025-05-26
+79,Rodrigo Ferreira Costa,000.000.079-30,rodrigo.ferreira79@outlook.com,(31) 92889-4742,1962-11-21,Montes Claros,MG,2024-02-15
+80,Ana Pereira Santos,000.000.080-70,ana.pereira80@outlook.com,(34) 93458-3932,2005-05-14,Grao Mogol,MG,2026-04-02
+81,Debora Cardoso Dias,000.000.081-63,debora.cardoso81@hotmail.com,(34) 95067-7819,1979-11-02,Pirapora,MG,2026-04-25
+82,Eduarda Barbosa Costa,000.000.082-25,eduarda.barbosa82@gmail.com,(31) 94656-9450,2004-06-02,Uberlandia,MG,2024-03-11
+83,Julia Machado Gomes,000.000.083-49,julia.machado83@outlook.com,(31) 98483-1130,1975-06-11,Salinas,MG,2024-10-25
+84,Rodrigo Cavalcanti Gomes,000.000.084-89,rodrigo.cavalcanti84@hotmail.com,(34) 97033-9083,1991-01-03,Curvelo,MG,2025-07-13
+85,Guilherme Cavalcanti Pereira,000.000.085-29,guilherme.cavalcanti85@gmail.com,(34) 91391-4817,1959-12-15,Belo Horizonte,MG,2025-10-13
+86,Cesar Silva Ribeiro,000.000.086-10,cesar.silva86@yahoo.com.br,(38) 96038-2703,1990-02-17,Grao Mogol,MG,2024-08-31
+87,Giovana Nascimento Santos,000.000.087-28,giovana.nascimento87@outlook.com,(31) 91719-4792,1961-11-28,Uberlandia,MG,2025-12-18
+88,Diego Carvalho Cardoso,000.000.088-20,diego.carvalho88@gmail.com,(38) 93187-7461,2001-10-28,Buritizeiro,MG,2025-08-04
+89,Daniel Almeida Nunes,000.000.089-26,daniel.almeida89@hotmail.com,(34) 95276-6161,1973-04-14,Curvelo,MG,2026-05-01
+90,Fernanda Ribeiro Ribeiro,000.000.090-67,fernanda.ribeiro90@outlook.com,(31) 92223-4321,1996-04-29,Sao Francisco,MG,2026-02-27
+91,Sabrina Souza Rodrigues,000.000.091-23,sabrina.souza91@hotmail.com,(34) 98635-6145,1972-01-26,Bocaiuva,MG,2025-07-02
+92,Camila Freitas Alves,000.000.092-67,camila.freitas92@outlook.com,(34) 95341-2964,2000-06-05,Janauba,MG,2026-04-06
+93,Beatriz Gomes Correia,000.000.093-99,beatriz.gomes93@gmail.com,(31) 96370-3430,2000-05-10,Curvelo,MG,2024-09-11
+94,Camila Martins Araujo,000.000.094-16,camila.martins94@outlook.com,(34) 93848-1509,1972-04-04,Januaria,MG,2025-04-08
+95,Patricia Cardoso Lopes,000.000.095-41,patricia.cardoso95@gmail.com,(34) 92669-3290,1997-08-23,Montes Claros,MG,2024-03-04
+96,Heloisa Pereira Rodrigues,000.000.096-35,heloisa.pereira96@yahoo.com.br,(34) 92376-5240,2001-10-23,Montes Claros,MG,2024-03-07
+97,Mariana Dias Carvalho,000.000.097-26,mariana.dias97@gmail.com,(34) 93007-1699,1967-03-08,Montes Claros,MG,2024-06-21
+98,Rodrigo Almeida Correia,000.000.098-60,rodrigo.almeida98@yahoo.com.br,(31) 97270-7990,1993-01-13,Belo Horizonte,MG,2024-08-07
+99,Lucas Lima Lima,000.000.099-67,lucas.lima99@hotmail.com,(31) 95026-5835,1963-10-13,Uberlandia,MG,2026-06-22
+100,Patricia Nascimento Santos,000.000.100-21,patricia.nascimento100@outlook.com,(34) 93248-7868,1990-08-24,Corinto,MG,2026-06-24
+101,Natalia Pereira Dias,000.000.101-79,natalia.pereira101@gmail.com,(34) 96883-8859,1959-09-09,Sao Francisco,MG,2025-05-11
+102,Camila Barbosa Araujo,000.000.102-51,camila.barbosa102@yahoo.com.br,(34) 93946-1427,1979-12-07,Buritizeiro,MG,2024-08-12
+103,Bruno Cavalcanti Freitas,000.000.103-45,bruno.cavalcanti103@gmail.com,(34) 99674-6856,1956-02-23,Salinas,MG,2024-06-12
+104,Gabriela Pereira Nunes,000.000.104-40,gabriela.pereira104@outlook.com,(38) 91916-4594,1956-11-21,Januaria,MG,2026-03-27
+105,Elisa Costa Correia,000.000.105-32,elisa.costa105@hotmail.com,(31) 96210-6878,1955-06-20,Montes Claros,MG,2025-12-21
+106,Cesar Costa Barbosa,000.000.106-82,cesar.costa106@hotmail.com,(38) 94084-9064,1959-11-26,Pirapora,MG,2024-06-28
+107,Larissa Santos Oliveira,000.000.107-17,larissa.santos107@hotmail.com,(38) 94584-1326,1961-04-23,Diamantina,MG,2024-01-01
+108,Bernardo Rocha Alves,000.000.108-26,bernardo.rocha108@outlook.com,(38) 93907-6301,2003-03-13,Montes Claros,MG,2024-05-31
+109,Sabrina Mendes Rodrigues,000.000.109-24,sabrina.mendes109@outlook.com,(31) 97120-7481,1955-12-19,Bocaiuva,MG,2024-12-10
+110,Vinicius Ribeiro Rodrigues,000.000.110-30,vinicius.ribeiro110@yahoo.com.br,(38) 98982-6198,1992-11-28,Curvelo,MG,2025-07-29
+111,Cesar Rocha Cavalcanti,000.000.111-55,cesar.rocha111@hotmail.com,(38) 93872-7199,1981-01-05,Curvelo,MG,2025-12-06
+112,Tatiana Rodrigues Ferreira,000.000.112-10,tatiana.rodrigues112@yahoo.com.br,(38) 91530-3983,1954-06-30,Belo Horizonte,MG,2026-04-08
+113,Vanessa Pereira Dias,000.000.113-82,vanessa.pereira113@gmail.com,(34) 93304-6425,2001-07-23,Salinas,MG,2024-12-21
+114,Amanda Ferreira Dias,000.000.114-21,amanda.ferreira114@outlook.com,(34) 91186-5345,1989-09-23,Salinas,MG,2025-12-10
+115,Eduarda Costa Lima,000.000.115-23,eduarda.costa115@gmail.com,(31) 97323-8179,1970-11-21,Janauba,MG,2026-06-24
+116,Giovana Nascimento Martins,000.000.116-54,giovana.nascimento116@yahoo.com.br,(31) 98855-4695,1993-12-12,Diamantina,MG,2024-03-16
+117,Carla Gomes Silva,000.000.117-50,carla.gomes117@outlook.com,(31) 92215-6600,1993-04-11,Espinosa,MG,2025-01-19
+118,Karina Cardoso Oliveira,000.000.118-80,karina.cardoso118@gmail.com,(34) 98909-1507,1969-11-04,Corinto,MG,2024-06-17
+119,Thiago Almeida Ferreira,000.000.119-16,thiago.almeida119@gmail.com,(34) 94367-4112,1971-10-27,Curvelo,MG,2025-07-21
+120,Emerson Cardoso Lopes,000.000.120-43,emerson.cardoso120@outlook.com,(34) 94891-2571,2004-02-01,Uberlandia,MG,2025-08-08
+121,Patricia Correia Nascimento,000.000.121-29,patricia.correia121@gmail.com,(34) 91062-8005,2000-09-04,Pirapora,MG,2026-04-23
+122,Alexandre Dias Rocha,000.000.122-71,alexandre.dias122@hotmail.com,(31) 91421-4390,1993-03-19,Corinto,MG,2024-10-25
+123,Fabio Nascimento Machado,000.000.123-24,fabio.nascimento123@outlook.com,(34) 98715-9013,1984-10-06,Bocaiuva,MG,2025-10-19
+124,Otavio Martins Ferreira,000.000.124-57,otavio.martins124@yahoo.com.br,(34) 94056-8303,2004-07-14,Pirapora,MG,2025-03-26
+125,Julia Lima Pereira,000.000.125-44,julia.lima125@gmail.com,(31) 92584-2404,1977-09-11,Sao Francisco,MG,2025-07-08
+126,Giovana Freitas Barbosa,000.000.126-39,giovana.freitas126@gmail.com,(34) 99561-7858,1960-06-30,Corinto,MG,2026-06-06
+127,Kaique Barbosa Pereira,000.000.127-70,kaique.barbosa127@outlook.com,(31) 97468-1568,1963-06-30,Buritizeiro,MG,2025-06-13
+128,Rodrigo Nunes Rocha,000.000.128-28,rodrigo.nunes128@gmail.com,(34) 93832-3738,1989-07-12,Sao Francisco,MG,2024-07-16
+129,Isabela Santos Almeida,000.000.129-20,isabela.santos129@yahoo.com.br,(31) 93422-5225,1979-11-08,Espinosa,MG,2026-01-14
+130,Eduarda Oliveira Martins,000.000.130-81,eduarda.oliveira130@yahoo.com.br,(38) 96343-5525,1961-11-30,Diamantina,MG,2026-06-13
+131,Ana Cavalcanti Mendes,000.000.131-89,ana.cavalcanti131@yahoo.com.br,(31) 97790-3451,1995-03-30,Buritizeiro,MG,2025-08-25
+132,Sabrina Freitas Souza,000.000.132-23,sabrina.freitas132@gmail.com,(34) 99775-6633,1971-09-04,Pirapora,MG,2025-01-27
+133,Yasmin Nascimento Barbosa,000.000.133-87,yasmin.nascimento133@yahoo.com.br,(31) 93821-5512,1972-05-21,Janauba,MG,2025-09-25
+134,Thiago Nunes Mendes,000.000.134-61,thiago.nunes134@gmail.com,(34) 96431-4892,2004-02-12,Curvelo,MG,2025-05-01
+135,Samuel Costa Silva,000.000.135-53,samuel.costa135@outlook.com,(34) 95593-9054,1999-09-23,Januaria,MG,2024-08-21
+136,Isabela Gomes Cardoso,000.000.136-66,isabela.gomes136@outlook.com,(34) 97828-2462,1991-09-05,Diamantina,MG,2024-08-04
+137,Giovana Cardoso Nascimento,000.000.137-76,giovana.cardoso137@outlook.com,(31) 99442-3604,2002-08-26,Pirapora,MG,2025-12-27
+138,Marcos Martins Rodrigues,000.000.138-77,marcos.martins138@gmail.com,(31) 94158-4288,2003-05-15,Salinas,MG,2024-02-03
+139,Julia Santos Costa,000.000.139-35,julia.santos139@outlook.com,(34) 98605-9275,1972-12-04,Corinto,MG,2024-05-06
+140,Beatriz Silva Pereira,000.000.140-57,beatriz.silva140@yahoo.com.br,(38) 98308-3909,1965-12-17,Buritizeiro,MG,2025-07-18
+141,Camila Costa Ferreira,000.000.141-43,camila.costa141@gmail.com,(34) 91449-7333,2004-02-01,Janauba,MG,2026-05-24
+142,Rodrigo Freitas Alves,000.000.142-38,rodrigo.freitas142@hotmail.com,(38) 94387-5408,1971-10-20,Grao Mogol,MG,2024-01-21
+143,Heloisa Freitas Nunes,000.000.143-11,heloisa.freitas143@yahoo.com.br,(31) 93837-1138,1988-06-18,Pirapora,MG,2025-09-14
+144,Vinicius Mendes Mendes,000.000.144-92,vinicius.mendes144@outlook.com,(34) 97168-6713,1967-05-12,Pirapora,MG,2024-08-11
+145,Julia Gomes Nunes,000.000.145-76,julia.gomes145@yahoo.com.br,(38) 92676-1120,1962-08-25,Corinto,MG,2026-05-13
+146,Diego Lopes Dias,000.000.146-86,diego.lopes146@outlook.com,(34) 92771-8892,2002-10-24,Belo Horizonte,MG,2024-10-10
+147,Wesley Ribeiro Machado,000.000.147-45,wesley.ribeiro147@outlook.com,(38) 95895-4086,1995-02-02,Grao Mogol,MG,2026-02-22
+148,Pedro Santos Cavalcanti,000.000.148-86,pedro.santos148@yahoo.com.br,(38) 96236-3292,2006-04-03,Corinto,MG,2025-05-24
+149,Tatiana Lima Almeida,000.000.149-61,tatiana.lima149@yahoo.com.br,(38) 91578-4111,1977-10-02,Curvelo,MG,2025-12-31
+150,Olivia Nunes Lopes,000.000.150-91,olivia.nunes150@yahoo.com.br,(38) 96873-9311,1981-08-10,Januaria,MG,2024-06-23
+151,Alexandre Lopes Ferreira,000.000.151-47,alexandre.lopes151@gmail.com,(34) 93096-5237,1958-05-21,Sao Francisco,MG,2024-07-06
+152,Beatriz Ribeiro Dias,000.000.152-21,beatriz.ribeiro152@hotmail.com,(34) 94659-6031,1970-10-25,Sao Francisco,MG,2026-06-27
+153,Bernardo Costa Lima,000.000.153-84,bernardo.costa153@outlook.com,(34) 92929-8709,2003-09-22,Januaria,MG,2025-10-11
+154,Sabrina Barbosa Rocha,000.000.154-19,sabrina.barbosa154@yahoo.com.br,(31) 99199-2963,1974-04-19,Grao Mogol,MG,2024-11-01
+155,Giovana Santos Machado,000.000.155-29,giovana.santos155@hotmail.com,(31) 96614-7704,1957-06-15,Espinosa,MG,2025-04-13
+156,Joao Ribeiro Machado,000.000.156-33,joao.ribeiro156@gmail.com,(34) 96449-3897,1980-06-03,Corinto,MG,2024-02-29
+157,Ana Carvalho Lima,000.000.157-36,ana.carvalho157@hotmail.com,(38) 93595-9021,2000-08-22,Janauba,MG,2025-09-21
+158,Hugo Dias Almeida,000.000.158-61,hugo.dias158@yahoo.com.br,(34) 97280-1076,2005-02-25,Grao Mogol,MG,2024-07-23
+159,Emerson Costa Silva,000.000.159-51,emerson.costa159@hotmail.com,(31) 91067-5076,1988-03-28,Curvelo,MG,2026-06-17
+160,Camila Gomes Rodrigues,000.000.160-23,camila.gomes160@yahoo.com.br,(38) 96015-3736,2002-09-06,Januaria,MG,2024-02-16
+161,Vinicius Gomes Carvalho,000.000.161-76,vinicius.gomes161@outlook.com,(34) 93192-6615,1964-07-24,Belo Horizonte,MG,2026-02-07
+162,Mariana Ferreira Cavalcanti,000.000.162-61,mariana.ferreira162@gmail.com,(31) 94675-3149,1989-08-04,Curvelo,MG,2024-01-23
+163,Sabrina Araujo Ferreira,000.000.163-25,sabrina.araujo163@outlook.com,(38) 91612-7147,1985-08-04,Sao Francisco,MG,2025-07-01
+164,Vanessa Santos Rocha,000.000.164-16,vanessa.santos164@gmail.com,(38) 91323-1790,1998-02-24,Uberlandia,MG,2025-03-30
+165,Elisa Souza Lopes,000.000.165-42,elisa.souza165@yahoo.com.br,(38) 93508-4366,1951-12-28,Montes Claros,MG,2024-11-04
+166,Giovana Nunes Souza,000.000.166-94,giovana.nunes166@outlook.com,(38) 93247-7862,1999-02-16,Grao Mogol,MG,2026-01-06
+167,Vanessa Souza Gomes,000.000.167-24,vanessa.souza167@gmail.com,(34) 94254-4272,1984-12-11,Januaria,MG,2025-06-19
+168,Mariana Costa Mendes,000.000.168-62,mariana.costa168@outlook.com,(31) 91645-9980,1964-01-04,Espinosa,MG,2024-07-31
+169,Cesar Nascimento Ribeiro,000.000.169-40,cesar.nascimento169@gmail.com,(31) 92458-2809,1957-01-11,Corinto,MG,2025-05-20
+170,Joao Oliveira Freitas,000.000.170-75,joao.oliveira170@gmail.com,(38) 92659-5192,1987-10-20,Diamantina,MG,2024-10-30
+171,Rafaela Carvalho Santos,000.000.171-22,rafaela.carvalho171@hotmail.com,(31) 95760-6901,1980-06-26,Uberlandia,MG,2026-01-26
+172,Henrique Souza Machado,000.000.172-15,henrique.souza172@gmail.com,(31) 93793-6384,1976-06-18,Espinosa,MG,2025-03-24
+173,Vanessa Lima Cardoso,000.000.173-21,vanessa.lima173@outlook.com,(34) 93996-2865,1972-08-01,Uberlandia,MG,2025-04-12
+174,Samuel Correia Martins,000.000.174-98,samuel.correia174@yahoo.com.br,(34) 93732-2852,1996-08-25,Curvelo,MG,2026-01-13
+175,Daniel Machado Ferreira,000.000.175-23,daniel.machado175@yahoo.com.br,(38) 98908-8178,1992-04-11,Buritizeiro,MG,2025-01-23
+176,Heloisa Costa Rocha,000.000.176-13,heloisa.costa176@hotmail.com,(34) 98997-2850,1971-08-23,Diamantina,MG,2024-02-17
+177,Eduarda Lima Dias,000.000.177-50,eduarda.lima177@gmail.com,(38) 99598-4669,1978-03-10,Grao Mogol,MG,2025-06-19
+178,Cesar Mendes Rocha,000.000.178-22,cesar.mendes178@yahoo.com.br,(38) 95072-8895,1977-07-09,Corinto,MG,2025-11-23
+179,Yasmin Martins Rodrigues,000.000.179-81,yasmin.martins179@gmail.com,(31) 93571-9283,1966-06-09,Januaria,MG,2025-05-22
+180,Karina Oliveira Freitas,000.000.180-72,karina.oliveira180@outlook.com,(31) 96421-5557,2004-01-09,Grao Mogol,MG,2024-08-16
+181,Patricia Dias Martins,000.000.181-61,patricia.dias181@hotmail.com,(31) 98521-8277,1957-02-16,Diamantina,MG,2024-03-31
+182,Larissa Carvalho Ribeiro,000.000.182-25,larissa.carvalho182@yahoo.com.br,(38) 91291-2681,1972-05-06,Uberlandia,MG,2024-02-06
+183,Patricia Lopes Silva,000.000.183-21,patricia.lopes183@outlook.com,(38) 94389-8474,1977-12-16,Belo Horizonte,MG,2026-04-25
+184,Daniel Correia Pereira,000.000.184-68,daniel.correia184@outlook.com,(38) 98751-6952,1967-12-10,Bocaiuva,MG,2024-04-09
+185,Guilherme Nunes Pereira,000.000.185-10,guilherme.nunes185@outlook.com,(34) 95783-9973,1961-09-16,Belo Horizonte,MG,2025-12-19
+186,Gabriela Santos Ferreira,000.000.186-73,gabriela.santos186@hotmail.com,(38) 97704-2752,1985-09-22,Buritizeiro,MG,2024-07-19
+187,Mariana Souza Machado,000.000.187-60,mariana.souza187@hotmail.com,(34) 94122-6536,1998-11-14,Sao Francisco,MG,2025-02-28
+188,Carla Dias Correia,000.000.188-96,carla.dias188@gmail.com,(34) 98493-9260,1996-06-17,Diamantina,MG,2024-01-05
+189,Natalia Cardoso Santos,000.000.189-80,natalia.cardoso189@yahoo.com.br,(38) 98912-9328,1992-08-22,Curvelo,MG,2025-08-15
+190,Lucas Cardoso Correia,000.000.190-26,lucas.cardoso190@gmail.com,(34) 96273-9259,1974-01-11,Uberlandia,MG,2025-09-15
+191,Cesar Freitas Pereira,000.000.191-45,cesar.freitas191@yahoo.com.br,(34) 95819-8419,1996-07-28,Janauba,MG,2025-02-26
+192,Thiago Mendes Cardoso,000.000.192-75,thiago.mendes192@outlook.com,(38) 99975-6143,1958-11-16,Corinto,MG,2024-08-10
+193,Mariana Alves Rocha,000.000.193-47,mariana.alves193@outlook.com,(38) 93173-3913,1963-05-02,Grao Mogol,MG,2025-12-11
+194,Wesley Ribeiro Mendes,000.000.194-24,wesley.ribeiro194@outlook.com,(38) 98870-7839,1960-08-22,Pirapora,MG,2026-06-17
+195,Hugo Cavalcanti Silva,000.000.195-76,hugo.cavalcanti195@gmail.com,(31) 97240-3381,2003-10-12,Corinto,MG,2024-02-27
+196,Mariana Lima Freitas,000.000.196-30,mariana.lima196@outlook.com,(38) 95105-3399,2002-12-22,Curvelo,MG,2026-03-14
+197,Tatiana Alves Freitas,000.000.197-79,tatiana.alves197@gmail.com,(34) 98415-2679,1953-04-07,Januaria,MG,2025-11-22
+198,Fernanda Lopes Machado,000.000.198-38,fernanda.lopes198@yahoo.com.br,(31) 99370-5712,2004-04-28,Espinosa,MG,2025-01-25
+199,Elisa Almeida Cavalcanti,000.000.199-97,elisa.almeida199@outlook.com,(38) 91881-1212,1985-12-28,Salinas,MG,2025-09-27
+200,Heloisa Machado Machado,000.000.200-66,heloisa.machado200@hotmail.com,(38) 97025-9955,1954-05-29,Salinas,MG,2026-03-05
