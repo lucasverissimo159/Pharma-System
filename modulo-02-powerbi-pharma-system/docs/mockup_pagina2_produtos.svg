@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="Segoe UI, Helvetica, sans-serif">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00695C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#004D40;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F5F5F5;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="104%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="#F5F5F5"/>
+
+  <!-- Cabecalho -->
+  <rect x="0" y="0" width="1600" height="80" fill="url(#grad1)"/>
+  <circle cx="45" cy="40" r="20" fill="#26A69A"/>
+  <text x="45" y="47" text-anchor="middle" font-size="22" font-weight="bold" fill="white">P</text>
+  <text x="80" y="35" font-size="20" font-weight="bold" fill="white">PharmaSystem</text>
+  <text x="80" y="58" font-size="13" fill="#B2DFDB">Dashboard Executivo — Produtos</text>
+  <text x="1580" y="35" text-anchor="end" font-size="12" fill="#B2DFDB">Atualizado: 10/07/2026</text>
+  <text x="1580" y="58" text-anchor="end" font-size="12" fill="#B2DFDB">v1.0</text>
+
+  <!-- Botoes de navegacao -->
+  <g transform="translate(30, 100)">
+    <rect x="0" y="0" width="150" height="35" rx="4" fill="#FFFFFF" stroke="#00695C" stroke-width="1"/>
+    <text x="75" y="23" text-anchor="middle" font-size="13" fill="#00695C">Visao Geral</text>
+    <rect x="160" y="0" width="120" height="35" rx="4" fill="#00695C"/>
+    <text x="220" y="23" text-anchor="middle" font-size="13" fill="white" font-weight="bold">Produtos</text>
+    <rect x="290" y="0" width="120" height="35" rx="4" fill="#FFFFFF" stroke="#00695C" stroke-width="1"/>
+    <text x="350" y="23" text-anchor="middle" font-size="13" fill="#00695C">Clientes</text>
+  </g>
+
+  <!-- Painel de filtros -->
+  <g transform="translate(30, 160)">
+    <rect x="0" y="0" width="220" height="700" fill="white" rx="4" filter="url(#shadow)"/>
+    <text x="20" y="30" font-size="14" font-weight="bold" fill="#424242">FILTROS</text>
+    <line x1="20" y1="42" x2="200" y2="42" stroke="#E0E0E0" stroke-width="1"/>
+
+    <text x="20" y="70" font-size="12" font-weight="bold" fill="#616161">ANO</text>
+    <g transform="translate(20, 80)">
+      <rect x="0" y="0" width="55" height="30" fill="#00695C" rx="3"/>
+      <text x="27" y="20" text-anchor="middle" font-size="12" fill="white" font-weight="bold">2026</text>
+      <rect x="62" y="0" width="55" height="30" fill="#FFFFFF" stroke="#BDBDBD" rx="3"/>
+      <text x="90" y="20" text-anchor="middle" font-size="12" fill="#616161">2025</text>
+      <rect x="124" y="0" width="55" height="30" fill="#FFFFFF" stroke="#BDBDBD" rx="3"/>
+      <text x="152" y="20" text-anchor="middle" font-size="12" fill="#616161">2024</text>
+    </g>
+
+    <text x="20" y="140" font-size="12" font-weight="bold" fill="#616161">CATEGORIA</text>
+    <g transform="translate(20, 150)">
+      <rect x="0" y="0" width="15" height="15" fill="#00695C" rx="2"/>
+      <text x="22" y="12" font-size="11" fill="#424242">Todas</text>
+      <rect x="0" y="22" width="15" height="15" fill="#FFFFFF" stroke="#BDBDBD" rx="2"/>
+      <text x="22" y="34" font-size="11" fill="#424242">Genericos</text>
+      <rect x="0" y="44" width="15" height="15" fill="#FFFFFF" stroke="#BDBDBD" rx="2"/>
+      <text x="22" y="56" font-size="11" fill="#424242">Referencia</text>
+      <rect x="0" y="66" width="15" height="15" fill="#FFFFFF" stroke="#BDBDBD" rx="2"/>
+      <text x="22" y="78" font-size="11" fill="#424242">Similares</text>
+      <rect x="0" y="88" width="15" height="15" fill="#FFFFFF" stroke="#BDBDBD" rx="2"/>
+      <text x="22" y="100" font-size="11" fill="#424242">Higiene Pessoal</text>
+      <rect x="0" y="110" width="15" height="15" fill="#FFFFFF" stroke="#BDBDBD" rx="2"/>
+      <text x="22" y="122" font-size="11" fill="#9E9E9E">+ 5 categorias</text>
+    </g>
+
+    <text x="20" y="310" font-size="12" font-weight="bold" fill="#616161">EXIGE RECEITA</text>
+    <g transform="translate(20, 320)">
+      <rect x="0" y="0" width="80" height="30" fill="#00695C" rx="3"/>
+      <text x="40" y="20" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Todos</text>
+      <rect x="85" y="0" width="45" height="30" fill="#FFFFFF" stroke="#BDBDBD" rx="3"/>
+      <text x="107" y="20" text-anchor="middle" font-size="12" fill="#616161">Sim</text>
+      <rect x="135" y="0" width="45" height="30" fill="#FFFFFF" stroke="#BDBDBD" rx="3"/>
+      <text x="157" y="20" text-anchor="middle" font-size="12" fill="#616161">Nao</text>
+    </g>
+
+    <text x="20" y="390" font-size="12" font-weight="bold" fill="#616161">FABRICANTE</text>
+    <g transform="translate(20, 400)">
+      <rect x="0" y="0" width="180" height="30" fill="#F5F5F5" stroke="#BDBDBD" rx="3"/>
+      <text x="10" y="20" font-size="12" fill="#424242">Todos (26) ▼</text>
+    </g>
+
+    <text x="20" y="460" font-size="12" font-weight="bold" fill="#616161">PRECO DE VENDA</text>
+    <g transform="translate(20, 475)">
+      <rect x="0" y="0" width="180" height="6" fill="#E0E0E0" rx="3"/>
+      <rect x="20" y="0" width="120" height="6" fill="#00695C" rx="3"/>
+      <circle cx="20" cy="3" r="8" fill="#00695C"/>
+      <circle cx="140" cy="3" r="8" fill="#00695C"/>
+      <text x="0" y="30" font-size="10" fill="#616161">R$ 8</text>
+      <text x="180" y="30" font-size="10" fill="#616161" text-anchor="end">R$ 420</text>
+    </g>
+
+    <g transform="translate(20, 620)">
+      <rect x="0" y="0" width="180" height="35" fill="white" stroke="#00695C" rx="3"/>
+      <text x="90" y="23" text-anchor="middle" font-size="12" fill="#00695C">↻ Limpar filtros</text>
+    </g>
+  </g>
+
+  <!-- CARTOES KPI -->
+  <g transform="translate(275, 160)">
+    <rect x="0" y="0" width="300" height="120" fill="url(#cardGrad)" rx="6" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="6" height="120" fill="#2E7D32"/>
+    <text x="20" y="25" font-size="11" fill="#757575" font-weight="bold">PRODUTO CAMPEAO DO PERIODO</text>
+    <text x="20" y="55" font-size="16" font-weight="bold" fill="#2E7D32">Shampoo Johnsons Baby</text>
+    <text x="20" y="75" font-size="13" fill="#424242">80 unidades vendidas</text>
+    <text x="20" y="95" font-size="11" fill="#4CAF50">Categoria: Infantil</text>
+    <text x="20" y="110" font-size="10" fill="#9E9E9E">Fabricante: J&amp;J</text>
+  </g>
+
+  <g transform="translate(595, 160)">
+    <rect x="0" y="0" width="220" height="120" fill="url(#cardGrad)" rx="6" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="6" height="120" fill="#00695C"/>
+    <text x="20" y="25" font-size="11" fill="#757575" font-weight="bold">PRODUTOS ATIVOS</text>
+    <text x="20" y="70" font-size="32" font-weight="bold" fill="#00695C">71</text>
+    <text x="20" y="95" font-size="11" fill="#616161">em 10 categorias</text>
+    <text x="20" y="110" font-size="10" fill="#9E9E9E">26 fabricantes diferentes</text>
+  </g>
+
+  <g transform="translate(835, 160)">
+    <rect x="0" y="0" width="220" height="120" fill="url(#cardGrad)" rx="6" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="6" height="120" fill="#1976D2"/>
+    <text x="20" y="25" font-size="11" fill="#757575" font-weight="bold">UNIDADES VENDIDAS</text>
+    <text x="20" y="70" font-size="32" font-weight="bold" fill="#1976D2">3.253</text>
+    <text x="20" y="95" font-size="11" fill="#4CAF50">▲ +8,7% vs periodo anterior</text>
+    <text x="20" y="110" font-size="10" fill="#9E9E9E">Media: 46 un/produto</text>
+  </g>
+
+  <g transform="translate(1075, 160)">
+    <rect x="0" y="0" width="220" height="120" fill="url(#cardGrad)" rx="6" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="6" height="120" fill="#FFA000"/>
+    <text x="20" y="25" font-size="11" fill="#757575" font-weight="bold">MARGEM MEDIA</text>
+    <text x="20" y="70" font-size="32" font-weight="bold" fill="#FFA000">54,3%</text>
+    <text x="20" y="95" font-size="11" fill="#616161">Sobre preco de venda</text>
+    <text x="20" y="110" font-size="10" fill="#9E9E9E">R$ 121,8 mil de margem</text>
+  </g>
+
+  <g transform="translate(1315, 160)">
+    <rect x="0" y="0" width="255" height="120" fill="url(#cardGrad)" rx="6" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="6" height="120" fill="#C62828"/>
+    <text x="20" y="25" font-size="11" fill="#757575" font-weight="bold">CONCENTRACAO TOP 10</text>
+    <text x="20" y="70" font-size="32" font-weight="bold" fill="#C62828">31,4%</text>
+    <text x="20" y="95" font-size="11" fill="#4CAF50">Baixa concentracao</text>
+    <text x="20" y="110" font-size="10" fill="#9E9E9E">10 SKUs = 31% do faturamento</text>
+  </g>
+
+  <!-- GRAFICO TOP 10 PRODUTOS (barras horizontais) -->
+  <g transform="translate(275, 300)">
+    <rect x="0" y="0" width="600" height="290" fill="white" rx="6" filter="url(#shadow)"/>
+    <text x="20" y="30" font-size="14" font-weight="bold" fill="#424242">Top 10 Produtos por Unidades Vendidas</text>
+    <text x="20" y="48" font-size="11" fill="#9E9E9E">Ranking do periodo selecionado</text>
+
+    <g font-size="10" fill="#424242">
+      <text x="20" y="82">Shampoo Johnsons Baby 200ml</text>
+      <rect x="240" y="72" width="320" height="14" fill="#00695C" rx="1"/>
+      <text x="565" y="83" font-size="10" fill="#00695C" font-weight="bold">80</text>
+
+      <text x="20" y="107">Perfume Essencial Natura</text>
+      <rect x="240" y="97" width="312" height="14" fill="#00796B" rx="1"/>
+      <text x="557" y="108" font-size="10" fill="#00796B" font-weight="bold">78</text>
+
+      <text x="20" y="132">Aparelho Pressao Digital Omron</text>
+      <rect x="240" y="122" width="312" height="14" fill="#00897B" rx="1"/>
+      <text x="557" y="133" font-size="10" fill="#00897B" font-weight="bold">78</text>
+
+      <text x="20" y="157">Buscopan Composto 20cp</text>
+      <rect x="240" y="147" width="308" height="14" fill="#009688" rx="1"/>
+      <text x="553" y="158" font-size="10" fill="#009688" font-weight="bold">77</text>
+
+      <text x="20" y="182">Papel Higienico Neve 12 rolos</text>
+      <rect x="240" y="172" width="300" height="14" fill="#26A69A" rx="1"/>
+      <text x="545" y="183" font-size="10" fill="#26A69A" font-weight="bold">75</text>
+
+      <text x="20" y="207">Sertralina 50mg 30cp</text>
+      <rect x="240" y="197" width="290" height="14" fill="#4DB6AC" rx="1"/>
+      <text x="535" y="208" font-size="10" fill="#4DB6AC" font-weight="bold">72</text>
+
+      <text x="20" y="232">Fralda Huggies Supreme G</text>
+      <rect x="240" y="222" width="285" height="14" fill="#4DB6AC" rx="1"/>
+      <text x="530" y="233" font-size="10" fill="#4DB6AC" font-weight="bold">71</text>
+
+      <text x="20" y="257">Enxaguante Bucal Listerine</text>
+      <rect x="240" y="247" width="278" height="14" fill="#80CBC4" rx="1"/>
+      <text x="523" y="258" font-size="10" fill="#4DB6AC" font-weight="bold">70</text>
+    </g>
+  </g>
+
+  <!-- GRAFICO FATURAMENTO POR CATEGORIA (donut) -->
+  <g transform="translate(895, 300)">
+    <rect x="0" y="0" width="400" height="290" fill="white" rx="6" filter="url(#shadow)"/>
+    <text x="20" y="30" font-size="14" font-weight="bold" fill="#424242">Faturamento por Categoria</text>
+    <text x="20" y="48" font-size="11" fill="#9E9E9E">% do faturamento total</text>
+
+    <g transform="translate(120, 170)">
+      <path d="M 0,-75 A 75,75 0 0,1 65,-38 L 0,0 Z" fill="#00695C"/>
+      <path d="M 65,-38 A 75,75 0 0,1 65,38 L 0,0 Z" fill="#26A69A"/>
+      <path d="M 65,38 A 75,75 0 0,1 20,72 L 0,0 Z" fill="#00897B"/>
+      <path d="M 20,72 A 75,75 0 0,1 -35,66 L 0,0 Z" fill="#4DB6AC"/>
+      <path d="M -35,66 A 75,75 0 0,1 -75,0 L 0,0 Z" fill="#80CBC4"/>
+      <path d="M -75,0 A 75,75 0 0,1 0,-75 L 0,0 Z" fill="#B2DFDB"/>
+      <circle cx="0" cy="0" r="42" fill="white"/>
+      <text x="0" y="-6" text-anchor="middle" font-size="10" fill="#757575">10 categorias</text>
+      <text x="0" y="12" text-anchor="middle" font-size="14" font-weight="bold" fill="#424242">R$ 224k</text>
+    </g>
+
+    <g transform="translate(240, 85)" font-size="10">
+      <rect x="0" y="0" width="12" height="12" fill="#00695C" rx="1"/>
+      <text x="18" y="10" fill="#424242">Higiene Pessoal</text>
+      <text x="145" y="10" fill="#616161" font-weight="bold">18,4%</text>
+
+      <rect x="0" y="20" width="12" height="12" fill="#26A69A" rx="1"/>
+      <text x="18" y="30" fill="#424242">Primeiros Socorros</text>
+      <text x="145" y="30" fill="#616161" font-weight="bold">15,8%</text>
+
+      <rect x="0" y="40" width="12" height="12" fill="#00897B" rx="1"/>
+      <text x="18" y="50" fill="#424242">Dermocosmeticos</text>
+      <text x="145" y="50" fill="#616161" font-weight="bold">14,7%</text>
+
+      <rect x="0" y="60" width="12" height="12" fill="#4DB6AC" rx="1"/>
+      <text x="18" y="70" fill="#424242">Suplementos</text>
+      <text x="145" y="70" fill="#616161" font-weight="bold">13,2%</text>
+
+      <rect x="0" y="80" width="12" height="12" fill="#80CBC4" rx="1"/>
+      <text x="18" y="90" fill="#424242">Infantil</text>
+      <text x="145" y="90" fill="#616161" font-weight="bold">10,9%</text>
+
+      <rect x="0" y="100" width="12" height="12" fill="#B2DFDB" rx="1"/>
+      <text x="18" y="110" fill="#424242">Outras (5)</text>
+      <text x="145" y="110" fill="#616161" font-weight="bold">27,0%</text>
+    </g>
+  </g>
+
+  <!-- GRAFICO MARGEM POR CATEGORIA (barras verticais) -->
+  <g transform="translate(1315, 300)">
+    <rect x="0" y="0" width="255" height="290" fill="white" rx="6" filter="url(#shadow)"/>
+    <text x="20" y="30" font-size="14" font-weight="bold" fill="#424242">Margem % por Categoria</text>
+    <text x="20" y="48" font-size="10" fill="#9E9E9E">Top 5 mais rentaveis</text>
+
+    <g font-size="9" fill="#424242">
+      <text x="20" y="82">Dermocosmeticos</text>
+      <rect x="140" y="72" width="90" height="14" fill="#00695C" rx="1"/>
+      <text x="235" y="83" font-size="9" fill="#00695C" font-weight="bold">57,1%</text>
+
+      <text x="20" y="107">Cosmeticos</text>
+      <rect x="140" y="97" width="88" height="14" fill="#00796B" rx="1"/>
+      <text x="233" y="108" font-size="9" fill="#00796B" font-weight="bold">55,8%</text>
+
+      <text x="20" y="132">Suplementos</text>
+      <rect x="140" y="122" width="85" height="14" fill="#00897B" rx="1"/>
+      <text x="230" y="133" font-size="9" fill="#00897B" font-weight="bold">54,2%</text>
+
+      <text x="20" y="157">Perfumaria</text>
+      <rect x="140" y="147" width="83" height="14" fill="#009688" rx="1"/>
+      <text x="228" y="158" font-size="9" fill="#009688" font-weight="bold">53,6%</text>
+
+      <text x="20" y="182">Medic. Referencia</text>
+      <rect x="140" y="172" width="80" height="14" fill="#26A69A" rx="1"/>
+      <text x="225" y="183" font-size="9" fill="#26A69A" font-weight="bold">51,4%</text>
+
+      <text x="20" y="207">Higiene Pessoal</text>
+      <rect x="140" y="197" width="76" height="14" fill="#4DB6AC" rx="1"/>
+      <text x="221" y="208" font-size="9" fill="#4DB6AC" font-weight="bold">49,8%</text>
+
+      <text x="20" y="232">Genericos</text>
+      <rect x="140" y="222" width="72" height="14" fill="#80CBC4" rx="1"/>
+      <text x="217" y="233" font-size="9" fill="#4DB6AC" font-weight="bold">46,3%</text>
+    </g>
+  </g>
+
+  <!-- TABELA - PRODUTOS COM MAIOR FATURAMENTO -->
+  <g transform="translate(275, 610)">
+    <rect x="0" y="0" width="760" height="250" fill="white" rx="6" filter="url(#shadow)"/>
+    <text x="20" y="30" font-size="14" font-weight="bold" fill="#424242">Top 10 Produtos por Faturamento</text>
+
+    <line x1="15" y1="55" x2="740" y2="55" stroke="#E0E0E0"/>
+    <g font-size="10" font-weight="bold" fill="#757575">
+      <text x="20" y="72">PRODUTO</text>
+      <text x="380" y="72">CATEGORIA</text>
+      <text x="520" y="72" text-anchor="middle">UN.</text>
+      <text x="615" y="72" text-anchor="end">FATURAMENTO</text>
+      <text x="725" y="72" text-anchor="end">% TOTAL</text>
+    </g>
+    <line x1="15" y1="80" x2="740" y2="80" stroke="#E0E0E0"/>
+
+    <g font-size="11" fill="#424242">
+      <text x="20" y="102">Aparelho Pressao Digital Omron</text>
+      <text x="380" y="102" fill="#616161">Primeiros Socorros</text>
+      <text x="520" y="102" text-anchor="middle">78</text>
+      <text x="615" y="102" text-anchor="end" font-weight="bold" fill="#00695C">R$ 5.878</text>
+      <text x="725" y="102" text-anchor="end" fill="#00695C" font-weight="bold">2,6%</text>
+      <line x1="15" y1="115" x2="740" y2="115" stroke="#F5F5F5"/>
+
+      <text x="20" y="132">Perfume Essencial Natura</text>
+      <text x="380" y="132" fill="#616161">Perfumaria</text>
+      <text x="520" y="132" text-anchor="middle">78</text>
+      <text x="615" y="132" text-anchor="end" font-weight="bold" fill="#00695C">R$ 5.481</text>
+      <text x="725" y="132" text-anchor="end">2,4%</text>
+      <line x1="15" y1="145" x2="740" y2="145" stroke="#F5F5F5"/>
+
+      <text x="20" y="162">Perfume Malbec Boticario</text>
+      <text x="380" y="162" fill="#616161">Perfumaria</text>
+      <text x="520" y="162" text-anchor="middle">63</text>
+      <text x="615" y="162" text-anchor="end" font-weight="bold" fill="#00695C">R$ 4.115</text>
+      <text x="725" y="162" text-anchor="end">1,8%</text>
+      <line x1="15" y1="175" x2="740" y2="175" stroke="#F5F5F5"/>
+
+      <text x="20" y="192">Serum Vitamina C Adcos</text>
+      <text x="380" y="192" fill="#616161">Dermocosmeticos</text>
+      <text x="520" y="192" text-anchor="middle">42</text>
+      <text x="615" y="192" text-anchor="end" font-weight="bold" fill="#00695C">R$ 3.982</text>
+      <text x="725" y="192" text-anchor="end">1,8%</text>
+      <line x1="15" y1="205" x2="740" y2="205" stroke="#F5F5F5"/>
+
+      <text x="20" y="222">Whey Protein Growth 1kg</text>
+      <text x="380" y="222" fill="#616161">Suplementos</text>
+      <text x="520" y="222" text-anchor="middle">31</text>
+      <text x="615" y="222" text-anchor="end" font-weight="bold" fill="#00695C">R$ 3.902</text>
+      <text x="725" y="222" text-anchor="end">1,7%</text>
+    </g>
+  </g>
+
+  <!-- ALERTA: Produtos sem giro -->
+  <g transform="translate(1055, 610)">
+    <rect x="0" y="0" width="515" height="250" fill="white" rx="6" filter="url(#shadow)"/>
+    <text x="20" y="30" font-size="14" font-weight="bold" fill="#424242">Alertas de Produto</text>
+    <text x="20" y="48" font-size="11" fill="#9E9E9E">Requerem atencao gerencial</text>
+
+    <!-- Alerta 1 -->
+    <g transform="translate(20, 65)">
+      <rect x="0" y="0" width="475" height="55" fill="#FFF3E0" stroke="#FFA000" stroke-width="1" rx="4"/>
+      <circle cx="20" cy="27" r="12" fill="#FFA000"/>
+      <text x="20" y="32" text-anchor="middle" font-size="14" font-weight="bold" fill="white">!</text>
+      <text x="45" y="20" font-size="12" font-weight="bold" fill="#E65100">Produtos sem venda no periodo</text>
+      <text x="45" y="38" font-size="10" fill="#616161">7 produtos ativos nao venderam nenhuma unidade nos ultimos 90 dias.</text>
+      <text x="45" y="50" font-size="10" fill="#00695C" font-weight="bold">→ Ver lista completa</text>
+    </g>
+
+    <!-- Alerta 2 -->
+    <g transform="translate(20, 130)">
+      <rect x="0" y="0" width="475" height="55" fill="#E3F2FD" stroke="#1976D2" stroke-width="1" rx="4"/>
+      <circle cx="20" cy="27" r="12" fill="#1976D2"/>
+      <text x="20" y="32" text-anchor="middle" font-size="14" font-weight="bold" fill="white">i</text>
+      <text x="45" y="20" font-size="12" font-weight="bold" fill="#0D47A1">Regulatorio: Medicamentos com receita</text>
+      <text x="45" y="38" font-size="10" fill="#616161">18 produtos exigem receita medica. Total vendido: 425 unidades.</text>
+      <text x="45" y="50" font-size="10" fill="#00695C" font-weight="bold">→ Relatorio SNGPC</text>
+    </g>
+
+    <!-- Alerta 3 -->
+    <g transform="translate(20, 195)">
+      <rect x="0" y="0" width="475" height="45" fill="#E8F5E9" stroke="#4CAF50" stroke-width="1" rx="4"/>
+      <circle cx="20" cy="22" r="12" fill="#4CAF50"/>
+      <text x="20" y="27" text-anchor="middle" font-size="14" font-weight="bold" fill="white">✓</text>
+      <text x="45" y="18" font-size="12" font-weight="bold" fill="#1B5E20">Concentracao saudavel</text>
+      <text x="45" y="35" font-size="10" fill="#616161">Top 10 = 31% do faturamento — sem dependencia excessiva de SKU.</text>
+    </g>
+  </g>
+
+  <text x="800" y="890" text-anchor="middle" font-size="10" fill="#9E9E9E">Fonte: PostgreSQL PharmaSystem — Modulo 01 | Ultima atualizacao: 10/07/2026 06:00</text>
+</svg>

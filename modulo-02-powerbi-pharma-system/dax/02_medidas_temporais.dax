@@ -1,0 +1,151 @@
+// ============================================================================
+// PharmaSystem - Medidas DAX Temporais (Time Intelligence)
+// ----------------------------------------------------------------------------
+// Nivel: INTERMEDIARIO
+// Conceitos: CALCULATE, DATEADD, SAMEPERIODLASTYEAR, DATESYTD, PARALLELPERIOD
+// Uso: comparativos periodo x periodo, evolucao temporal, YTD
+// ============================================================================
+// PRE-REQUISITO IMPORTANTE:
+//   - A tabela `calendario` deve estar marcada como "Tabela de Data" no Power BI
+//     (Modelagem > Marcar como tabela de datas > coluna: data)
+//   - Deve haver relacionamento entre calendario[data] e vendas[data_venda]
+//   - No modelo, a direcao do filtro vai de calendario -> vendas
+// ============================================================================
+
+
+// ----------------------------------------------------------------------------
+// M14 - Faturamento Mes Anterior
+// ----------------------------------------------------------------------------
+// Objetivo: faturamento do mes imediatamente anterior ao contexto atual.
+// Formato: Moeda (R$), 2 casas decimais
+// Tecnica: DATEADD desloca o contexto de data em -1 mes.
+// ----------------------------------------------------------------------------
+Faturamento Mes Anterior =
+CALCULATE (
+    [Faturamento Total],
+    DATEADD ( calendario[data], -1, MONTH )
+)
+
+
+// ----------------------------------------------------------------------------
+// M15 - Faturamento Ano Anterior
+// ----------------------------------------------------------------------------
+// Objetivo: faturamento do mesmo periodo, um ano atras (YoY).
+// Formato: Moeda (R$), 2 casas decimais
+// Tecnica: SAMEPERIODLASTYEAR e um atalho para DATEADD(-1, YEAR).
+// ----------------------------------------------------------------------------
+Faturamento Ano Anterior =
+CALCULATE (
+    [Faturamento Total],
+    SAMEPERIODLASTYEAR ( calendario[data] )
+)
+
+
+// ----------------------------------------------------------------------------
+// M16 - Crescimento Mensal (MoM %)
+// ----------------------------------------------------------------------------
+// Objetivo: variacao % em relacao ao mes anterior.
+// Formato: Percentual, 2 casas decimais
+// Nota:    valores positivos indicam crescimento, negativos indicam queda.
+//          Usar formatacao condicional (verde/vermelho) no visual.
+// ----------------------------------------------------------------------------
+Crescimento Mensal % =
+VAR FaturamentoAtual = [Faturamento Total]
+VAR FaturamentoAnterior = [Faturamento Mes Anterior]
+RETURN
+    DIVIDE (
+        FaturamentoAtual - FaturamentoAnterior,
+        FaturamentoAnterior,
+        0
+    )
+
+
+// ----------------------------------------------------------------------------
+// M17 - Crescimento Anual (YoY %)
+// ----------------------------------------------------------------------------
+// Objetivo: variacao % em relacao ao mesmo periodo do ano anterior.
+// Formato: Percentual, 2 casas decimais
+// ----------------------------------------------------------------------------
+Crescimento Anual % =
+VAR FaturamentoAtual = [Faturamento Total]
+VAR FaturamentoAno = [Faturamento Ano Anterior]
+RETURN
+    DIVIDE (
+        FaturamentoAtual - FaturamentoAno,
+        FaturamentoAno,
+        0
+    )
+
+
+// ----------------------------------------------------------------------------
+// M18 - Faturamento YTD (Year To Date)
+// ----------------------------------------------------------------------------
+// Objetivo: faturamento acumulado desde o inicio do ano ate a data atual.
+// Formato: Moeda (R$), 2 casas decimais
+// Tecnica: DATESYTD retorna todas as datas do ano ate a data do contexto.
+// ----------------------------------------------------------------------------
+Faturamento YTD =
+CALCULATE (
+    [Faturamento Total],
+    DATESYTD ( calendario[data] )
+)
+
+
+// ----------------------------------------------------------------------------
+// M19 - Faturamento YTD Ano Anterior
+// ----------------------------------------------------------------------------
+// Objetivo: mesmo YTD do ano passado, para comparativo.
+// Formato: Moeda (R$), 2 casas decimais
+// Tecnica: DATESYTD com deslocamento de -1 ano via SAMEPERIODLASTYEAR.
+// ----------------------------------------------------------------------------
+Faturamento YTD Ano Anterior =
+CALCULATE (
+    [Faturamento Total],
+    DATESYTD ( SAMEPERIODLASTYEAR ( calendario[data] ) )
+)
+
+
+// ----------------------------------------------------------------------------
+// M20 - Media Movel 3 Meses
+// ----------------------------------------------------------------------------
+// Objetivo: suaviza oscilacoes usando media dos ultimos 3 meses.
+// Formato: Moeda (R$), 2 casas decimais
+// Tecnica: DATESINPERIOD delimita janela + CALCULATE.
+// ----------------------------------------------------------------------------
+Media Movel 3M =
+CALCULATE (
+    DIVIDE ( [Faturamento Total], 3, 0 ),
+    DATESINPERIOD (
+        calendario[data],
+        MAX ( calendario[data] ),
+        -3,
+        MONTH
+    )
+)
+
+
+// ----------------------------------------------------------------------------
+// M21 - Clientes Ativos (ultimos 90 dias)
+// ----------------------------------------------------------------------------
+// Objetivo: clientes distintos que compraram nos ultimos 90 dias do contexto.
+// Formato: Numero inteiro
+// Uso:     KPI de retencao na pagina de Clientes.
+// ----------------------------------------------------------------------------
+Clientes Ativos 90d =
+VAR DataMax = MAX ( calendario[data] )
+VAR DataMin = DataMax - 90
+RETURN
+    CALCULATE (
+        DISTINCTCOUNT ( vendas[cliente_id] ),
+        vendas[status] = "CONCLUIDA",
+        NOT ISBLANK ( vendas[cliente_id] ),
+        calendario[data] >= DataMin,
+        calendario[data] <= DataMax
+    )
+
+
+// ============================================================================
+// FIM - Medidas Temporais (8 medidas)
+// Total ate aqui: 21 medidas
+// Proximo arquivo: 03_medidas_avancadas.dax
+// ============================================================================

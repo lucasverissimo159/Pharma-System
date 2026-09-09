@@ -1,0 +1,138 @@
+digraph PharmaSystem_Modelo_PowerBI {
+    rankdir=TB;
+    graph [
+        fontname="Helvetica",
+        bgcolor="white",
+        splines=polyline,
+        nodesep=0.5,
+        ranksep=1.0,
+        pad=0.3,
+        label="Modelo de Dados - PharmaSystem no Power BI\n(Star Schema com dimensao calendario)",
+        labelloc="t",
+        fontsize=14
+    ];
+    node [
+        shape=none,
+        fontname="Helvetica",
+        fontsize=11
+    ];
+    edge [
+        fontname="Helvetica",
+        fontsize=9,
+        color="#555555",
+        arrowsize=0.8
+    ];
+
+    // ============ DIMENSOES (cinza claro) ============
+
+    calendario [label=<
+        <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6">
+            <TR><TD BGCOLOR="#546E7A" COLSPAN="2"><FONT COLOR="white"><B>calendario (DIM)</B></FONT></TD></TR>
+            <TR><TD ALIGN="LEFT"><B>data</B></TD><TD ALIGN="LEFT">chave</TD></TR>
+            <TR><TD ALIGN="LEFT">ano</TD><TD ALIGN="LEFT">inteiro</TD></TR>
+            <TR><TD ALIGN="LEFT">trimestre</TD><TD ALIGN="LEFT">inteiro</TD></TR>
+            <TR><TD ALIGN="LEFT">mes_num</TD><TD ALIGN="LEFT">inteiro</TD></TR>
+            <TR><TD ALIGN="LEFT">mes_nome</TD><TD ALIGN="LEFT">texto</TD></TR>
+            <TR><TD ALIGN="LEFT">ano_mes</TD><TD ALIGN="LEFT">texto</TD></TR>
+            <TR><TD ALIGN="LEFT">dia_semana_nome</TD><TD ALIGN="LEFT">texto</TD></TR>
+            <TR><TD ALIGN="LEFT">eh_final_de_semana</TD><TD ALIGN="LEFT">Sim/Nao</TD></TR>
+        </TABLE>
+    >];
+
+    filiais [label=<
+        <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6">
+            <TR><TD BGCOLOR="#1F6091" COLSPAN="2"><FONT COLOR="white"><B>filiais (DIM)</B></FONT></TD></TR>
+            <TR><TD ALIGN="LEFT"><B>id</B></TD><TD ALIGN="LEFT">chave</TD></TR>
+            <TR><TD ALIGN="LEFT">codigo</TD><TD ALIGN="LEFT">texto</TD></TR>
+            <TR><TD ALIGN="LEFT">nome</TD><TD ALIGN="LEFT">texto</TD></TR>
+            <TR><TD ALIGN="LEFT">cidade</TD><TD ALIGN="LEFT">texto</TD></TR>
+            <TR><TD ALIGN="LEFT">estado</TD><TD ALIGN="LEFT">texto</TD></TR>
+            <TR><TD ALIGN="LEFT">data_abertura</TD><TD ALIGN="LEFT">data</TD></TR>
+        </TABLE>
+    >];
+
+    clientes [label=<
+        <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6">
+            <TR><TD BGCOLOR="#EF6C00" COLSPAN="2"><FONT COLOR="white"><B>clientes (DIM)</B></FONT></TD></TR>
+            <TR><TD ALIGN="LEFT"><B>id</B></TD><TD ALIGN="LEFT">chave</TD></TR>
+            <TR><TD ALIGN="LEFT">nome</TD><TD ALIGN="LEFT">texto</TD></TR>
+            <TR><TD ALIGN="LEFT">cidade</TD><TD ALIGN="LEFT">texto</TD></TR>
+            <TR><TD ALIGN="LEFT">data_nascimento</TD><TD ALIGN="LEFT">data</TD></TR>
+            <TR><TD ALIGN="LEFT">data_cadastro</TD><TD ALIGN="LEFT">data</TD></TR>
+        </TABLE>
+    >];
+
+    produtos [label=<
+        <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6">
+            <TR><TD BGCOLOR="#2E7D32" COLSPAN="2"><FONT COLOR="white"><B>produtos (DIM)</B></FONT></TD></TR>
+            <TR><TD ALIGN="LEFT"><B>id</B></TD><TD ALIGN="LEFT">chave</TD></TR>
+            <TR><TD ALIGN="LEFT">nome</TD><TD ALIGN="LEFT">texto</TD></TR>
+            <TR><TD ALIGN="LEFT"><I>categoria_id</I></TD><TD ALIGN="LEFT">FK</TD></TR>
+            <TR><TD ALIGN="LEFT">fabricante</TD><TD ALIGN="LEFT">texto</TD></TR>
+            <TR><TD ALIGN="LEFT">preco_custo</TD><TD ALIGN="LEFT">moeda</TD></TR>
+            <TR><TD ALIGN="LEFT">preco_venda</TD><TD ALIGN="LEFT">moeda</TD></TR>
+            <TR><TD ALIGN="LEFT">exige_receita</TD><TD ALIGN="LEFT">Sim/Nao</TD></TR>
+        </TABLE>
+    >];
+
+    categorias [label=<
+        <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6">
+            <TR><TD BGCOLOR="#2E7D32" COLSPAN="2"><FONT COLOR="white"><B>categorias (DIM)</B></FONT></TD></TR>
+            <TR><TD ALIGN="LEFT"><B>id</B></TD><TD ALIGN="LEFT">chave</TD></TR>
+            <TR><TD ALIGN="LEFT">nome</TD><TD ALIGN="LEFT">texto</TD></TR>
+        </TABLE>
+    >];
+
+    // ============ FATOS (vermelho) ============
+
+    vendas [label=<
+        <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6">
+            <TR><TD BGCOLOR="#C62828" COLSPAN="2"><FONT COLOR="white"><B>vendas (FATO)</B></FONT></TD></TR>
+            <TR><TD ALIGN="LEFT"><B>id</B></TD><TD ALIGN="LEFT">chave</TD></TR>
+            <TR><TD ALIGN="LEFT"><I>filial_id</I></TD><TD ALIGN="LEFT">FK</TD></TR>
+            <TR><TD ALIGN="LEFT"><I>cliente_id</I></TD><TD ALIGN="LEFT">FK</TD></TR>
+            <TR><TD ALIGN="LEFT"><I>data_venda</I></TD><TD ALIGN="LEFT">FK (data)</TD></TR>
+            <TR><TD ALIGN="LEFT">valor_total</TD><TD ALIGN="LEFT">moeda</TD></TR>
+            <TR><TD ALIGN="LEFT">desconto</TD><TD ALIGN="LEFT">moeda</TD></TR>
+            <TR><TD ALIGN="LEFT">forma_pagamento</TD><TD ALIGN="LEFT">texto</TD></TR>
+            <TR><TD ALIGN="LEFT">status</TD><TD ALIGN="LEFT">texto</TD></TR>
+        </TABLE>
+    >];
+
+    itens_venda [label=<
+        <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6">
+            <TR><TD BGCOLOR="#C62828" COLSPAN="2"><FONT COLOR="white"><B>itens_venda (FATO)</B></FONT></TD></TR>
+            <TR><TD ALIGN="LEFT"><B>id</B></TD><TD ALIGN="LEFT">chave</TD></TR>
+            <TR><TD ALIGN="LEFT"><I>venda_id</I></TD><TD ALIGN="LEFT">FK</TD></TR>
+            <TR><TD ALIGN="LEFT"><I>produto_id</I></TD><TD ALIGN="LEFT">FK</TD></TR>
+            <TR><TD ALIGN="LEFT">quantidade</TD><TD ALIGN="LEFT">inteiro</TD></TR>
+            <TR><TD ALIGN="LEFT">preco_unitario</TD><TD ALIGN="LEFT">moeda</TD></TR>
+            <TR><TD ALIGN="LEFT">subtotal</TD><TD ALIGN="LEFT">moeda</TD></TR>
+        </TABLE>
+    >];
+
+    estoque [label=<
+        <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6">
+            <TR><TD BGCOLOR="#6A1B9A" COLSPAN="2"><FONT COLOR="white"><B>estoque (FATO)</B></FONT></TD></TR>
+            <TR><TD ALIGN="LEFT"><B>id</B></TD><TD ALIGN="LEFT">chave</TD></TR>
+            <TR><TD ALIGN="LEFT"><I>produto_id</I></TD><TD ALIGN="LEFT">FK</TD></TR>
+            <TR><TD ALIGN="LEFT"><I>filial_id</I></TD><TD ALIGN="LEFT">FK</TD></TR>
+            <TR><TD ALIGN="LEFT">quantidade</TD><TD ALIGN="LEFT">inteiro</TD></TR>
+        </TABLE>
+    >];
+
+    // ============ RELACIONAMENTOS ============
+
+    calendario -> vendas         [label="1 : N (ativo)", color="#1976D2", penwidth=1.5];
+    calendario -> clientes       [label="1 : N (inativo)", color="#1976D2", style=dashed];
+    filiais    -> vendas         [label="1 : N"];
+    filiais    -> estoque        [label="1 : N"];
+    clientes   -> vendas         [label="0 : N"];
+    vendas     -> itens_venda    [label="1 : N"];
+    produtos   -> itens_venda    [label="1 : N"];
+    produtos   -> estoque        [label="1 : N"];
+    categorias -> produtos       [label="1 : N"];
+
+    // Nota
+    nota [shape=note, label="NOTA:\n- Azul solido = relacionamento ativo\n- Azul tracejado = relacionamento inativo\n  (usado apenas em Novos Clientes via USERELATIONSHIP)", fillcolor="#FFF9C4", style=filled, fontsize=9];
+}

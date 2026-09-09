@@ -1,0 +1,11 @@
+﻿id,nome,descricao
+1,Medicamentos Genericos,Medicamentos genericos com principio ativo comprovado
+2,Medicamentos de Referencia,Medicamentos de marca original com patente
+3,Medicamentos Similares,Medicamentos similares aos de referencia
+4,Higiene Pessoal,Produtos de higiene e cuidado pessoal
+5,Cosmeticos,Produtos de beleza e cosmeticos
+6,Dermocosmeticos,Cosmeticos com finalidade dermatologica
+7,Suplementos Alimentares,"Vitaminas, minerais e suplementos"
+8,Infantil,Produtos para bebes e criancas
+9,Perfumaria,Perfumes e fragrancias
+10,Primeiros Socorros,Materiais de curativo e primeiros socorros

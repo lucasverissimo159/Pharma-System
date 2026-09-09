@@ -1,0 +1,199 @@
+// ============================================================================
+// PharmaSystem - Medidas DAX Base
+// ----------------------------------------------------------------------------
+// Nivel: BASICO
+// Conceitos: SUM, COUNT, COUNTROWS, AVERAGE, DIVIDE, DISTINCTCOUNT
+// Uso: fundacoes do dashboard - todas as outras medidas dependem destas
+// ============================================================================
+// COMO USAR NO POWER BI:
+//   1. Va ate a aba Dados
+//   2. Clique com botao direito na tabela vendas > Nova medida
+//   3. Cole a formula (uma medida por vez)
+//   4. Confirme com Enter
+//   5. Formate o resultado (Moeda, Numero inteiro, %) na guia Formatacao
+// ============================================================================
+
+
+// ----------------------------------------------------------------------------
+// M01 - Faturamento Total
+// ----------------------------------------------------------------------------
+// Objetivo: soma dos subtotais dos itens de venda considerando apenas
+//           vendas concluidas.
+// Formato: Moeda (R$), 2 casas decimais
+// Onde usar: cartao KPI principal, tabela dinamica, tooltip
+// ----------------------------------------------------------------------------
+Faturamento Total =
+CALCULATE (
+    SUM ( itens_venda[subtotal] ),
+    vendas[status] = "CONCLUIDA"
+)
+
+
+// ----------------------------------------------------------------------------
+// M02 - Faturamento Bruto
+// ----------------------------------------------------------------------------
+// Objetivo: soma dos valores totais das vendas (antes do desconto).
+// Formato: Moeda (R$), 2 casas decimais
+// ----------------------------------------------------------------------------
+Faturamento Bruto =
+CALCULATE (
+    SUM ( vendas[valor_total] ),
+    vendas[status] = "CONCLUIDA"
+)
+
+
+// ----------------------------------------------------------------------------
+// M03 - Total Descontos
+// ----------------------------------------------------------------------------
+// Objetivo: soma dos descontos concedidos.
+// Formato: Moeda (R$), 2 casas decimais
+// ----------------------------------------------------------------------------
+Total Descontos =
+CALCULATE (
+    SUM ( vendas[desconto] ),
+    vendas[status] = "CONCLUIDA"
+)
+
+
+// ----------------------------------------------------------------------------
+// M04 - Total Vendas
+// ----------------------------------------------------------------------------
+// Objetivo: quantidade de transacoes de venda (concluidas).
+// Formato: Numero inteiro
+// ----------------------------------------------------------------------------
+Total Vendas =
+CALCULATE (
+    COUNTROWS ( vendas ),
+    vendas[status] = "CONCLUIDA"
+)
+
+
+// ----------------------------------------------------------------------------
+// M05 - Total Vendas Canceladas
+// ----------------------------------------------------------------------------
+// Objetivo: quantas vendas foram canceladas no periodo (auditoria).
+// Formato: Numero inteiro
+// ----------------------------------------------------------------------------
+Total Vendas Canceladas =
+CALCULATE (
+    COUNTROWS ( vendas ),
+    vendas[status] = "CANCELADA"
+)
+
+
+// ----------------------------------------------------------------------------
+// M06 - Ticket Medio
+// ----------------------------------------------------------------------------
+// Objetivo: valor medio por venda concluida.
+// Formato: Moeda (R$), 2 casas decimais
+// Nota:    usar DIVIDE em vez de "/" para evitar erro de divisao por zero.
+// ----------------------------------------------------------------------------
+Ticket Medio =
+DIVIDE (
+    [Faturamento Total],
+    [Total Vendas],
+    0
+)
+
+
+// ----------------------------------------------------------------------------
+// M07 - Total Itens Vendidos
+// ----------------------------------------------------------------------------
+// Objetivo: total de unidades vendidas (soma da quantidade dos itens).
+// Formato: Numero inteiro
+// ----------------------------------------------------------------------------
+Total Itens Vendidos =
+CALCULATE (
+    SUM ( itens_venda[quantidade] ),
+    vendas[status] = "CONCLUIDA"
+)
+
+
+// ----------------------------------------------------------------------------
+// M08 - Total Clientes
+// ----------------------------------------------------------------------------
+// Objetivo: quantidade de clientes cadastrados na base.
+// Formato: Numero inteiro
+// ----------------------------------------------------------------------------
+Total Clientes =
+COUNTROWS ( clientes )
+
+
+// ----------------------------------------------------------------------------
+// M09 - Clientes com Compra
+// ----------------------------------------------------------------------------
+// Objetivo: clientes que efetivamente ja compraram (nem todo cadastro compra).
+// Formato: Numero inteiro
+// Tecnica: DISTINCTCOUNT em cliente_id, filtrando NAO NULOS.
+// ----------------------------------------------------------------------------
+Clientes com Compra =
+CALCULATE (
+    DISTINCTCOUNT ( vendas[cliente_id] ),
+    vendas[status] = "CONCLUIDA",
+    NOT ISBLANK ( vendas[cliente_id] )
+)
+
+
+// ----------------------------------------------------------------------------
+// M10 - Total Produtos Ativos
+// ----------------------------------------------------------------------------
+// Objetivo: quantidade de SKUs ativos no catalogo.
+// Formato: Numero inteiro
+// ----------------------------------------------------------------------------
+Total Produtos Ativos =
+CALCULATE (
+    COUNTROWS ( produtos ),
+    produtos[ativo] = "Sim"
+)
+
+
+// ----------------------------------------------------------------------------
+// M11 - Taxa de Cancelamento
+// ----------------------------------------------------------------------------
+// Objetivo: % de vendas canceladas sobre o total.
+// Formato: Percentual, 2 casas decimais
+// ----------------------------------------------------------------------------
+Taxa Cancelamento =
+DIVIDE (
+    [Total Vendas Canceladas],
+    [Total Vendas] + [Total Vendas Canceladas],
+    0
+)
+
+
+// ----------------------------------------------------------------------------
+// M12 - Margem Bruta
+// ----------------------------------------------------------------------------
+// Objetivo: valor de margem gerado (preco_venda - preco_custo) x quantidade.
+// Formato: Moeda (R$), 2 casas decimais
+// Tecnica: SUMX itera linha a linha da tabela itens_venda calculando margem.
+// ----------------------------------------------------------------------------
+Margem Bruta =
+SUMX (
+    FILTER (
+        itens_venda,
+        RELATED ( vendas[status] ) = "CONCLUIDA"
+    ),
+    itens_venda[quantidade] *
+    ( RELATED ( produtos[preco_venda] ) - RELATED ( produtos[preco_custo] ) )
+)
+
+
+// ----------------------------------------------------------------------------
+// M13 - Percentual de Margem
+// ----------------------------------------------------------------------------
+// Objetivo: margem bruta sobre faturamento (indicador de lucratividade).
+// Formato: Percentual, 2 casas decimais
+// ----------------------------------------------------------------------------
+Percentual de Margem =
+DIVIDE (
+    [Margem Bruta],
+    [Faturamento Total],
+    0
+)
+
+
+// ============================================================================
+// FIM - Medidas Base (13 medidas)
+// Proximo arquivo: 02_medidas_temporais.dax
+// ============================================================================

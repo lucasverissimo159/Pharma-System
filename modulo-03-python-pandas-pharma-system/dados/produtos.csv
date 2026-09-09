@@ -1,0 +1,72 @@
+﻿id,codigo_barras,nome,categoria_id,fabricante,preco_custo,preco_venda,estoque_minimo,exige_receita,ativo
+1,7891234000101,Dipirona Sodica 500mg 20 comprimidos,1,EMS,4.2,8.9,20,Nao,Sim
+2,7891234000102,Paracetamol 750mg 20 comprimidos,1,Medley,5.1,10.5,20,Nao,Sim
+3,7891234000103,Ibuprofeno 400mg 20 comprimidos,1,Neo Quimica,6.3,13.2,15,Nao,Sim
+4,7891234000104,Omeprazol 20mg 28 capsulas,1,EMS,7.8,16.9,15,Nao,Sim
+5,7891234000105,Amoxicilina 500mg 21 capsulas,1,Medley,18.5,39.9,10,Sim,Sim
+6,7891234000106,Losartana Potassica 50mg 30 comprimidos,1,EMS,9.2,19.8,20,Sim,Sim
+7,7891234000107,Metformina 850mg 30 comprimidos,1,Neo Quimica,8.1,17.5,15,Sim,Sim
+8,7891234000108,Sinvastatina 20mg 30 comprimidos,1,EMS,12.4,27.9,15,Sim,Sim
+9,7891234000109,Captopril 25mg 30 comprimidos,1,Medley,4.8,10.2,20,Sim,Sim
+10,7891234000110,Sertralina 50mg 30 comprimidos,1,Eurofarma,22.5,49.9,10,Sim,Sim
+11,7891234000201,Dorflex 30 comprimidos,2,Sanofi,11.2,24.5,15,Nao,Sim
+12,7891234000202,Tylenol 750mg 20 comprimidos,2,Janssen,14.8,32.9,15,Nao,Sim
+13,7891234000203,Advil 400mg 20 comprimidos,2,Pfizer,18.2,39.8,10,Nao,Sim
+14,7891234000204,Losec 20mg 28 capsulas,2,AstraZeneca,28.5,62.9,10,Nao,Sim
+15,7891234000205,Cataflam 50mg 20 comprimidos,2,Novartis,16.4,35.9,15,Nao,Sim
+16,7891234000206,Voltaren Emulgel 60g,2,Novartis,21.8,47.5,12,Nao,Sim
+17,7891234000207,Neosaldina 30 drageas,2,Takeda,13.9,29.9,15,Nao,Sim
+18,7891234000208,Buscopan Composto 20 comprimidos,2,Sanofi,15.6,33.8,12,Nao,Sim
+19,7891234000301,Cimegripe 24 capsulas,3,Cimed,8.9,19.5,15,Nao,Sim
+20,7891234000302,Multigrip 20 capsulas,3,EMS,7.8,17.2,15,Nao,Sim
+21,7891234000303,Naldecon 12 comprimidos,3,Bristol,9.4,20.9,12,Nao,Sim
+22,7891234000304,Coristina D Pro 20 comprimidos,3,Mantecorp,10.2,22.5,12,Nao,Sim
+23,7891234000401,Sabonete Dove Original 90g,4,Unilever,2.1,4.9,30,Nao,Sim
+24,7891234000402,Shampoo Pantene 400ml,4,P&G,12.5,26.9,20,Nao,Sim
+25,7891234000403,Condicionador Pantene 400ml,4,P&G,12.8,27.5,20,Nao,Sim
+26,7891234000404,Creme Dental Colgate Total 12 90g,4,Colgate,4.8,10.2,25,Nao,Sim
+27,7891234000405,Escova Dental Oral B Indicator,4,P&G,5.6,12.5,25,Nao,Sim
+28,7891234000406,Desodorante Rexona Aerossol 150ml,4,Unilever,9.8,21.5,20,Nao,Sim
+29,7891234000407,Fio Dental Colgate 50m,4,Colgate,3.2,7.2,25,Nao,Sim
+30,7891234000408,Absorvente Always Noturno 8un,4,P&G,7.9,17.2,20,Nao,Sim
+31,7891234000409,Papel Higienico Neve 12 rolos,4,Kimberly,14.2,30.9,15,Nao,Sim
+32,7891234000410,Enxaguante Bucal Listerine 500ml,4,J&J,15.8,34.5,15,Nao,Sim
+33,7891234000501,Base Liquida Ruby Rose 30ml,5,Ruby Rose,8.9,19.9,15,Nao,Sim
+34,7891234000502,Batom Avon Ultra Color,5,Avon,6.5,15.9,20,Nao,Sim
+35,7891234000503,Mascara de Cilios Maybelline,5,Maybelline,18.9,42.5,12,Nao,Sim
+36,7891234000504,Esmalte Risque 8ml,5,Risque,3.2,7.9,25,Nao,Sim
+37,7891234000505,Delineador Vult Liquido,5,Vult,7.8,18.9,15,Nao,Sim
+38,7891234000601,Protetor Solar La Roche FPS 60 60ml,6,La Roche,45.2,98.9,10,Nao,Sim
+39,7891234000602,Sabonete Facial Cetaphil 250ml,6,Galderma,32.5,71.9,10,Nao,Sim
+40,7891234000603,Hidratante Cerave 236ml,6,Cerave,38.9,84.5,10,Nao,Sim
+41,7891234000604,Creme Antissinais Vichy 50ml,6,Vichy,67.8,148.9,8,Nao,Sim
+42,7891234000605,Serum Vitamina C Adcos 30ml,6,Adcos,89.5,189.9,8,Nao,Sim
+43,7891234000701,Whey Protein Growth 1kg,7,Growth,78.9,169.9,10,Nao,Sim
+44,7891234000702,Creatina Integralmedica 300g,7,Integralmedica,54.2,118.9,12,Nao,Sim
+45,7891234000703,Vitamina C Sundown 30 comprimidos,7,Sundown,15.8,34.9,20,Nao,Sim
+46,7891234000704,Vitamina D 2000 UI Vitgold 30 caps,7,Vitgold,18.9,41.5,20,Nao,Sim
+47,7891234000705,Omega 3 1000mg Nature Made 60 caps,7,Nature Made,28.5,62.9,15,Nao,Sim
+48,7891234000706,Complexo B Sundown 30 comprimidos,7,Sundown,16.2,35.9,20,Nao,Sim
+49,7891234000707,Ferro Combiron 30 comprimidos,7,Mantecorp,12.8,28.5,20,Nao,Sim
+50,7891234000708,Cafeina Growth 60 capsulas,7,Growth,19.9,43.9,15,Nao,Sim
+51,7891234000801,Fralda Pampers Confort M 30un,8,P&G,32.5,71.9,15,Nao,Sim
+52,7891234000802,Fralda Huggies Supreme G 26un,8,Kimberly,34.8,76.9,15,Nao,Sim
+53,7891234000803,Lenco Umedecido Pampers 48un,8,P&G,8.9,19.5,25,Nao,Sim
+54,7891234000804,Shampoo Johnsons Baby 200ml,8,J&J,7.2,16.2,20,Nao,Sim
+55,7891234000805,Sabonete Johnsons Baby 80g,8,J&J,3.8,8.5,25,Nao,Sim
+56,7891234000806,Pomada para Assadura Hipoglos 45g,8,Nycomed,12.5,27.9,15,Nao,Sim
+57,7891234000807,Chupeta Nuk Silicone Tam 1,8,Nuk,14.9,32.5,12,Nao,Sim
+58,7891234000901,Perfume Malbec Boticario 100ml,9,Boticario,89.5,194.9,8,Nao,Sim
+59,7891234000902,Perfume Egeo Boticario 90ml,9,Boticario,78.9,172.5,8,Nao,Sim
+60,7891234000903,Perfume Kaiak Natura 100ml,9,Natura,68.5,149.9,10,Nao,Sim
+61,7891234000904,Perfume Essencial Natura 100ml,9,Natura,95.8,209.9,8,Nao,Sim
+62,7891234001001,Band Aid Johnson 40un,10,J&J,7.8,17.2,20,Nao,Sim
+63,7891234001002,"Gaze Esteril 7,5x7,5cm 10un",10,Cremer,4.2,9.5,25,Nao,Sim
+64,7891234001003,"Esparadrapo 25mm x 4,5m",10,Cremer,6.9,15.2,20,Nao,Sim
+65,7891234001004,Algodao 100g,10,Cremer,5.8,12.9,25,Nao,Sim
+66,7891234001005,Soro Fisiologico 500ml,10,Fresenius,8.2,17.9,20,Nao,Sim
+67,7891234001006,Alcool 70% 500ml,10,Rioquimica,6.5,14.2,25,Nao,Sim
+68,7891234001007,Termometro Digital Geratherm,10,Geratherm,18.9,41.9,15,Nao,Sim
+69,7891234001008,Aparelho Pressao Digital Omron,10,Omron,189.5,419.9,5,Nao,Sim
+70,7891234001009,Mascara Descartavel Tripla 50un,10,Descarpack,12.8,27.9,20,Nao,Sim
+71,7891234001010,Luva Descartavel Latex M 100un,10,Supermax,24.5,53.9,15,Nao,Sim
