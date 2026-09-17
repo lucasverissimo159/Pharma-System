@@ -1,0 +1,76 @@
+2026-07-11 17:48:06 | INFO     | pipeline        | ======================================================================
+2026-07-11 17:48:06 | INFO     | pipeline        | INICIANDO PIPELINE ETL — 2026-07-11 17:48:06
+2026-07-11 17:48:06 | INFO     | pipeline        | ======================================================================
+2026-07-11 17:48:06 | INFO     | pipeline.load   | Banco inicializado: /home/claude/modulo-04-etl-pharma-system/db/pharma_dw.db
+2026-07-11 17:48:06 | INFO     | pipeline        | >> ETAPA: Extract
+2026-07-11 17:48:06 | INFO     | pipeline.extract | Encontrados 10 arquivos em /home/claude/modulo-04-etl-pharma-system/dados_brutos (padrao: vendas_filial_*.csv)
+2026-07-11 17:48:06 | INFO     | pipeline.extract | [vendas_filial_01_2026-06-15.csv] Lido: 30 linhas, 10 colunas, encoding=utf-8-sig
+2026-07-11 17:48:06 | INFO     | pipeline.extract | [vendas_filial_01_2026-06-16.csv] Lido: 20 linhas, 10 colunas, encoding=utf-8-sig
+2026-07-11 17:48:06 | INFO     | pipeline.extract | [vendas_filial_02_2026-06-15.csv] Lido: 30 linhas, 10 colunas, encoding=utf-8-sig
+2026-07-11 17:48:06 | WARNING  | pipeline.extract | Arquivo vendas_filial_02_2026-06-16.csv lido com encoding fallback: latin-1
+2026-07-11 17:48:06 | INFO     | pipeline.extract | [vendas_filial_02_2026-06-16.csv] Lido: 20 linhas, 10 colunas, encoding=latin-1
+2026-07-11 17:48:06 | INFO     | pipeline.extract | [vendas_filial_03_2026-06-15.csv] Lido: 25 linhas, 10 colunas, encoding=utf-8-sig
+2026-07-11 17:48:06 | INFO     | pipeline.extract | [vendas_filial_03_2026-06-16.csv] Lido: 18 linhas, 10 colunas, encoding=utf-8-sig
+2026-07-11 17:48:06 | INFO     | pipeline.extract | [vendas_filial_04_2026-06-15.csv] Lido: 20 linhas, 10 colunas, encoding=utf-8-sig
+2026-07-11 17:48:06 | INFO     | pipeline.extract | [vendas_filial_04_2026-06-16.csv] Lido: 15 linhas, 9 colunas, encoding=utf-8-sig
+2026-07-11 17:48:06 | ERROR    | pipeline.extract | [vendas_filial_04_2026-06-16.csv] Schema invalido: colunas obrigatorias faltando: quantidade. Presentes: ['filial_codigo', 'data_venda', 'cliente_cpf', 'produto_codigo', 'produto_nome', 'preco_unitario', 'desconto', 'forma_pagamento', 'vendedor']
+2026-07-11 17:48:06 | INFO     | pipeline.extract | [vendas_filial_05_2026-06-15.csv] Lido: 20 linhas, 10 colunas, encoding=utf-8-sig
+2026-07-11 17:48:06 | WARNING  | pipeline.extract | [vendas_filial_05_2026-06-16.csv] CSV sem dados
+2026-07-11 17:48:06 | INFO     | pipeline.extract | Extract concluido: 8 sucesso, 2 rejeitados
+2026-07-11 17:48:06 | INFO     | pipeline        | >> ETAPA: Transform [vendas_filial_01_2026-06-15.csv]
+2026-07-11 17:48:06 | INFO     | pipeline.transform | [vendas_filial_01_2026-06-15.csv] Transform: 30 -> 30 linhas (0 removidas: branco=0, nulos=0, invalido=0, duplicata=0, data_inv=0)
+2026-07-11 17:48:06 | INFO     | pipeline        | >> ETAPA: Load [vendas_filial_01_2026-06-15.csv]
+2026-07-11 17:48:06 | INFO     | pipeline.load   | [vendas_filial_01_2026-06-15.csv] Load: 30 inseridas, 0 atualizadas, 0 ignoradas
+2026-07-11 17:48:06 | INFO     | pipeline        | >> ETAPA: Transform [vendas_filial_01_2026-06-16.csv]
+2026-07-11 17:48:06 | INFO     | pipeline.transform | Removidas 5 duplicatas por chave natural
+2026-07-11 17:48:06 | INFO     | pipeline.transform | [vendas_filial_01_2026-06-16.csv] Transform: 20 -> 15 linhas (5 removidas: branco=0, nulos=0, invalido=0, duplicata=5, data_inv=0)
+2026-07-11 17:48:06 | INFO     | pipeline        | >> ETAPA: Load [vendas_filial_01_2026-06-16.csv]
+2026-07-11 17:48:06 | INFO     | pipeline.load   | [vendas_filial_01_2026-06-16.csv] Load: 15 inseridas, 0 atualizadas, 0 ignoradas
+2026-07-11 17:48:06 | INFO     | pipeline        | >> ETAPA: Transform [vendas_filial_02_2026-06-15.csv]
+2026-07-11 17:48:06 | INFO     | pipeline.transform | [vendas_filial_02_2026-06-15.csv] Transform: 30 -> 30 linhas (0 removidas: branco=0, nulos=0, invalido=0, duplicata=0, data_inv=0)
+2026-07-11 17:48:06 | INFO     | pipeline        | >> ETAPA: Load [vendas_filial_02_2026-06-15.csv]
+2026-07-11 17:48:06 | INFO     | pipeline.load   | [vendas_filial_02_2026-06-15.csv] Load: 30 inseridas, 0 atualizadas, 0 ignoradas
+2026-07-11 17:48:06 | INFO     | pipeline        | >> ETAPA: Transform [vendas_filial_02_2026-06-16.csv]
+2026-07-11 17:48:06 | INFO     | pipeline.transform | [vendas_filial_02_2026-06-16.csv] Transform: 20 -> 20 linhas (0 removidas: branco=0, nulos=0, invalido=0, duplicata=0, data_inv=0)
+2026-07-11 17:48:06 | INFO     | pipeline        | >> ETAPA: Load [vendas_filial_02_2026-06-16.csv]
+2026-07-11 17:48:06 | INFO     | pipeline.load   | [vendas_filial_02_2026-06-16.csv] Load: 20 inseridas, 0 atualizadas, 0 ignoradas
+2026-07-11 17:48:06 | INFO     | pipeline        | >> ETAPA: Transform [vendas_filial_03_2026-06-15.csv]
+2026-07-11 17:48:06 | INFO     | pipeline.transform | [vendas_filial_03_2026-06-15.csv] Transform: 25 -> 25 linhas (0 removidas: branco=0, nulos=0, invalido=0, duplicata=0, data_inv=0)
+2026-07-11 17:48:06 | INFO     | pipeline        | >> ETAPA: Load [vendas_filial_03_2026-06-15.csv]
+2026-07-11 17:48:06 | INFO     | pipeline.load   | [vendas_filial_03_2026-06-15.csv] Load: 25 inseridas, 0 atualizadas, 0 ignoradas
+2026-07-11 17:48:06 | INFO     | pipeline        | >> ETAPA: Transform [vendas_filial_03_2026-06-16.csv]
+2026-07-11 17:48:06 | WARNING  | pipeline.transform | Removendo 3 linhas com forma_pagamento invalida: ['CHEQUE', 'BOLETO']
+2026-07-11 17:48:06 | INFO     | pipeline.transform | [vendas_filial_03_2026-06-16.csv] Transform: 18 -> 15 linhas (3 removidas: branco=0, nulos=0, invalido=3, duplicata=0, data_inv=0)
+2026-07-11 17:48:06 | INFO     | pipeline        | >> ETAPA: Load [vendas_filial_03_2026-06-16.csv]
+2026-07-11 17:48:06 | INFO     | pipeline.load   | [vendas_filial_03_2026-06-16.csv] Load: 15 inseridas, 0 atualizadas, 0 ignoradas
+2026-07-11 17:48:06 | INFO     | pipeline        | >> ETAPA: Transform [vendas_filial_04_2026-06-15.csv]
+2026-07-11 17:48:06 | INFO     | pipeline.transform | [vendas_filial_04_2026-06-15.csv] Transform: 20 -> 20 linhas (0 removidas: branco=0, nulos=0, invalido=0, duplicata=0, data_inv=0)
+2026-07-11 17:48:06 | INFO     | pipeline        | >> ETAPA: Load [vendas_filial_04_2026-06-15.csv]
+2026-07-11 17:48:06 | INFO     | pipeline.load   | [vendas_filial_04_2026-06-15.csv] Load: 20 inseridas, 0 atualizadas, 0 ignoradas
+2026-07-11 17:48:06 | WARNING  | pipeline        | REJEITADO: vendas_filial_04_2026-06-16.csv — Schema invalido: colunas obrigatorias faltando: quantidade
+2026-07-11 17:48:06 | INFO     | pipeline        | >> ETAPA: Transform [vendas_filial_05_2026-06-15.csv]
+2026-07-11 17:48:06 | WARNING  | pipeline.transform | Removendo 4 linhas com quantidade <= 0
+2026-07-11 17:48:06 | WARNING  | pipeline.transform | Removendo 1 linhas com preco_unitario <= 0
+2026-07-11 17:48:06 | INFO     | pipeline.transform | [vendas_filial_05_2026-06-15.csv] Transform: 20 -> 15 linhas (5 removidas: branco=0, nulos=0, invalido=5, duplicata=0, data_inv=0)
+2026-07-11 17:48:06 | INFO     | pipeline        | >> ETAPA: Load [vendas_filial_05_2026-06-15.csv]
+2026-07-11 17:48:06 | INFO     | pipeline.load   | [vendas_filial_05_2026-06-15.csv] Load: 15 inseridas, 0 atualizadas, 0 ignoradas
+2026-07-11 17:48:06 | WARNING  | pipeline        | REJEITADO: vendas_filial_05_2026-06-16.csv — CSV sem dados (so cabecalho ou vazio)
+2026-07-11 17:48:06 | INFO     | pipeline        | ======================================================================
+2026-07-11 17:48:06 | INFO     | pipeline        | RESUMO DA EXECUCAO
+2026-07-11 17:48:06 | INFO     | pipeline        | ======================================================================
+2026-07-11 17:48:06 | INFO     | pipeline        |   Duracao total:         0.34s
+2026-07-11 17:48:06 | INFO     | pipeline        |   Status:                SUCESSO_PARCIAL
+2026-07-11 17:48:06 | INFO     | pipeline        |   Arquivos encontrados:  10
+2026-07-11 17:48:06 | INFO     | pipeline        |   Arquivos processados:  8
+2026-07-11 17:48:06 | INFO     | pipeline        |   Arquivos rejeitados:   2
+2026-07-11 17:48:06 | INFO     | pipeline        |   Linhas de entrada:     183
+2026-07-11 17:48:06 | INFO     | pipeline        |   Linhas apos transform: 170
+2026-07-11 17:48:06 | INFO     | pipeline        |   Linhas inseridas:      170
+2026-07-11 17:48:06 | INFO     | pipeline        |   Linhas atualizadas:    0
+2026-07-11 17:48:06 | INFO     | pipeline        | ======================================================================
+2026-07-11 17:48:06 | INFO     | pipeline        | Estado atual do banco:
+2026-07-11 17:48:06 | INFO     | pipeline        |   total_linhas_fato_vendas: 170
+2026-07-11 17:48:06 | INFO     | pipeline        |   filiais_distintas: 5
+2026-07-11 17:48:06 | INFO     | pipeline        |   meses_com_dados: 1
+2026-07-11 17:48:06 | INFO     | pipeline        |   faturamento_acumulado: 20,325.28
+2026-07-11 17:48:06 | INFO     | pipeline        |   execucoes_pipeline: 1

@@ -1,0 +1,31 @@
+# Banco de dados gerado
+db/*.db
+db/*.sqlite
+
+# Logs (rotacionados)
+logs/*.log
+logs/*.log.*
+
+# CSVs de trabalho (nao versionar)
+dados_processados/*.csv
+dados_rejeitados/*.csv
+
+# Ambiente Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Manter estrutura de pastas vazias
+!**/.gitkeep

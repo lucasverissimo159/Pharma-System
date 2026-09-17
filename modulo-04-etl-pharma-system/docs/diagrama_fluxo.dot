@@ -1,0 +1,112 @@
+digraph ETL_Fluxo {
+    rankdir=LR;
+    graph [
+        fontname="Helvetica",
+        bgcolor="white",
+        splines=ortho,
+        nodesep=0.4,
+        ranksep=0.8,
+        pad=0.3,
+        label="Fluxo do Pipeline ETL — PharmaSystem",
+        labelloc="t",
+        fontsize=14
+    ];
+    node [fontname="Helvetica", fontsize=10];
+    edge [fontname="Helvetica", fontsize=9, color="#455A64"];
+
+    // === Fontes ===
+    subgraph cluster_fontes {
+        label="Fontes (dados_brutos/)";
+        style="rounded,filled";
+        fillcolor="#F5F5F5";
+        color="#B0BEC5";
+        fontsize=11;
+
+        csv1 [label="vendas_filial_01_*.csv", shape=note, fillcolor="#E3F2FD", style="filled"];
+        csv2 [label="vendas_filial_02_*.csv", shape=note, fillcolor="#E3F2FD", style="filled"];
+        csv3 [label="... N arquivos", shape=note, fillcolor="#E3F2FD", style="filled"];
+    }
+
+    // === Extract ===
+    extract [label=<
+        <B>EXTRACT</B><BR/>
+        <FONT POINT-SIZE="9">extract.py</FONT><BR/>
+        <BR/>
+        <FONT POINT-SIZE="8">1. Le CSV<BR/>
+        2. Fallback encoding<BR/>
+        3. Valida schema</FONT>
+    >, shape=box, style="rounded,filled", fillcolor="#00695C", fontcolor="white", width=1.5, height=1.2];
+
+    // === Transform ===
+    transform [label=<
+        <B>TRANSFORM</B><BR/>
+        <FONT POINT-SIZE="9">transform.py</FONT><BR/>
+        <BR/>
+        <FONT POINT-SIZE="8">1. Snake_case cols<BR/>
+        2. Trata brancos/nulos<BR/>
+        3. Parse tipos<BR/>
+        4. Valida regras<BR/>
+        5. Remove duplicatas<BR/>
+        6. Enriquece</FONT>
+    >, shape=box, style="rounded,filled", fillcolor="#00796B", fontcolor="white", width=1.8, height=1.6];
+
+    // === Load ===
+    load [label=<
+        <B>LOAD</B><BR/>
+        <FONT POINT-SIZE="9">load.py</FONT><BR/>
+        <BR/>
+        <FONT POINT-SIZE="8">1. INSERT ON CONFLICT<BR/>
+        2. Idempotente<BR/>
+        3. Auditoria</FONT>
+    >, shape=box, style="rounded,filled", fillcolor="#26A69A", fontcolor="white", width=1.5, height=1.2];
+
+    // === Destino ===
+    banco [label=<
+        <B>Banco</B><BR/>
+        <FONT POINT-SIZE="8">fato_vendas<BR/>
+        pipeline_execucoes</FONT>
+    >, shape=cylinder, style="filled", fillcolor="#1976D2", fontcolor="white", height=1.2];
+
+    // === Destinos alternativos ===
+    subgraph cluster_saidas {
+        label="Movimentacao pos-processamento";
+        style="rounded,filled";
+        fillcolor="#FAFAFA";
+        color="#B0BEC5";
+
+        processados [label="dados_processados/\n(timestamp)", shape=folder,
+                      fillcolor="#C8E6C9", style="filled"];
+        rejeitados [label="dados_rejeitados/\n(REJEITADO_*)", shape=folder,
+                     fillcolor="#FFCDD2", style="filled"];
+    }
+
+    // === Logs ===
+    logs [label="logs/pipeline.log\n(rotacao diaria)", shape=note, fillcolor="#FFF9C4",
+          style="filled"];
+
+    // === Config ===
+    config [label="config/\nconfig.yaml\nschema.yaml", shape=note, fillcolor="#E1BEE7",
+            style="filled"];
+
+    // === Orquestrador ===
+    pipeline [label=<<B>PIPELINE</B><BR/><FONT POINT-SIZE="9">pipeline.py</FONT>>,
+              shape=diamond, style="filled", fillcolor="#FFA000", fontcolor="white",
+              height=0.8, width=1.4];
+
+    // === Conexoes ===
+    { csv1 csv2 csv3 } -> extract;
+
+    extract -> transform [label="OK", color="#4CAF50"];
+    extract -> rejeitados [label="schema\ninvalido", color="#EF5350", style=dashed];
+
+    transform -> load [label="df limpo"];
+    load -> banco [label="UPSERT"];
+
+    load -> processados [label="arquivo\nprocessado", color="#4CAF50", style=dashed];
+
+    // Config e logs
+    config -> pipeline [style=dotted, color="#7B1FA2"];
+    pipeline -> extract [style=dotted, color="#7B1FA2", label="orquestra"];
+
+    { extract transform load } -> logs [style=dotted, color="#F57C00"];
+}

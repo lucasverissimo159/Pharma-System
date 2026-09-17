@@ -1,0 +1,86 @@
+# =============================================================================
+# PharmaSystem ETL — Configuração Principal
+# =============================================================================
+# Este arquivo controla todos os caminhos, parâmetros de banco e regras de
+# execução do pipeline. NÃO commite senhas — use variáveis de ambiente
+# (${VAR}) para valores sensíveis.
+# =============================================================================
+
+paths:
+  # Diretórios de dados (relativos à raiz do projeto)
+  dados_brutos: dados_brutos
+  dados_processados: dados_processados
+  dados_rejeitados: dados_rejeitados
+  logs: logs
+
+banco:
+  # Backend do banco de destino: "sqlite" ou "postgres"
+  backend: sqlite
+
+  # Configuração SQLite (usada quando backend=sqlite)
+  sqlite:
+    caminho: db/pharma_dw.db
+
+  # Configuração PostgreSQL (usada quando backend=postgres)
+  # Descomente e ajuste caso queira usar PostgreSQL de verdade.
+  # postgres:
+  #   host: localhost
+  #   port: 5432
+  #   database: pharma_dw
+  #   user: pharma_etl
+  #   password: ${PHARMA_DB_PASSWORD}  # variável de ambiente
+
+pipeline:
+  # Padrão de nome de arquivo aceito (glob)
+  padrao_arquivo: "vendas_filial_*.csv"
+
+  # Encoding esperado — o extract tenta primeiro este, depois latin-1 como fallback
+  encoding_padrao: utf-8-sig
+
+  # O que fazer em caso de erro em UM arquivo
+  # continuar: continua para o próximo arquivo
+  # abortar: para tudo e sai com erro
+  em_caso_de_erro: continuar
+
+  # Executor: quando terminar, move arquivos processados
+  mover_processados: true
+
+  # Chave natural para deduplicação e UPSERT
+  chave_natural:
+    - filial_codigo
+    - data_venda
+    - cliente_cpf
+    - produto_codigo
+
+# Regras de validação de negócio
+regras:
+  # Aceitar valores negativos? (default: não)
+  aceitar_quantidade_negativa: false
+  aceitar_preco_negativo: false
+  aceitar_valor_zero: false
+
+  # Formatos de data aceitos (o transform tenta cada um em ordem)
+  formatos_data:
+    - "%Y-%m-%d %H:%M:%S"
+    - "%Y-%m-%d"
+    - "%d/%m/%Y %H:%M"
+    - "%d/%m/%Y"
+    - "%d-%m-%Y"
+
+  # Data mínima/máxima aceita (fora disso é considerado erro)
+  data_minima: "2020-01-01"
+  data_maxima: "2030-12-31"
+
+logging:
+  # Nível global: DEBUG, INFO, WARNING, ERROR
+  nivel: INFO
+
+  # Formato do log (padrão Python logging)
+  formato: "%(asctime)s | %(levelname)-8s | %(name)-15s | %(message)s"
+  formato_data: "%Y-%m-%d %H:%M:%S"
+
+  # Rotacionar por dia
+  rotacao_diaria: true
+
+  # Manter logs por N dias
+  retencao_dias: 30

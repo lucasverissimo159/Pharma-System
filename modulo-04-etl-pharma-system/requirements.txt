@@ -1,0 +1,6 @@
+pandas>=2.0
+numpy>=1.24
+pyyaml>=6.0
+
+# Opcional: para trocar SQLite por PostgreSQL
+# psycopg2-binary>=2.9

@@ -1,0 +1,67 @@
+# =============================================================================
+# Schema esperado dos CSVs de entrada
+# =============================================================================
+# Descreve as colunas obrigatórias, opcionais e tipos esperados dos CSVs de
+# vendas gerados pelos caixas das filiais. O extract usa isso para validar
+# cada arquivo antes de processá-lo.
+# =============================================================================
+
+vendas_filial:
+  descricao: >
+    CSV exportado diariamente pelo caixa de cada filial contendo as vendas do dia.
+    Uma linha por item vendido (produto x quantidade). Uma venda pode ter vários itens.
+
+  # Colunas obrigatórias — se faltar QUALQUER uma, o arquivo é rejeitado
+  obrigatorias:
+    - nome: filial_codigo
+      tipo: str
+      descricao: "Código da filial (ex: FIL001)"
+
+    - nome: data_venda
+      tipo: datetime
+      descricao: "Data e hora da venda (múltiplos formatos aceitos)"
+
+    - nome: cliente_cpf
+      tipo: str
+      descricao: "CPF do cliente (pode ser nulo para chapa branca)"
+      nullable: true
+
+    - nome: produto_codigo
+      tipo: str
+      descricao: "Código do produto (código de barras ou SKU)"
+
+    - nome: produto_nome
+      tipo: str
+      descricao: "Nome do produto"
+
+    - nome: quantidade
+      tipo: int
+      descricao: "Quantidade vendida do produto"
+      min: 1
+
+    - nome: preco_unitario
+      tipo: decimal
+      descricao: "Preço unitário praticado"
+      min: 0.01
+
+    - nome: forma_pagamento
+      tipo: str
+      descricao: "Forma de pagamento (PIX, DINHEIRO, DEBITO, CREDITO, CONVENIO)"
+      valores_aceitos:
+        - PIX
+        - DINHEIRO
+        - DEBITO
+        - CREDITO
+        - CONVENIO
+
+  # Colunas opcionais — não são obrigatórias, mas se vierem, são validadas
+  opcionais:
+    - nome: desconto
+      tipo: decimal
+      descricao: "Desconto aplicado no item"
+      min: 0
+      default: 0
+
+    - nome: vendedor
+      tipo: str
+      descricao: "Vendedor/atendente responsável"
