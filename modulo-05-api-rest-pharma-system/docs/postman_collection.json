@@ -1,0 +1,213 @@
+{
+  "info": {
+    "name": "PharmaSystem API",
+    "description": "Coleção Postman com exemplos de todos os principais endpoints.\n\nAo importar, defina a variável de ambiente `baseUrl` para `http://localhost:5000` (ou onde sua API estiver rodando).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "Health check simples",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/health"
+          }
+        },
+        {
+          "name": "Health check com banco",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/health/db"
+          }
+        },
+        {
+          "name": "Versão da API",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/versao"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Filiais",
+      "item": [
+        {
+          "name": "Listar todas",
+          "request": {"method": "GET", "url": "{{baseUrl}}/api/filiais"}
+        },
+        {
+          "name": "Filtrar por estado",
+          "request": {"method": "GET", "url": "{{baseUrl}}/api/filiais?estado=MG"}
+        },
+        {
+          "name": "Buscar por ID",
+          "request": {"method": "GET", "url": "{{baseUrl}}/api/filiais/1"}
+        },
+        {
+          "name": "Criar filial",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/filiais",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"codigo\": \"FIL050\",\n  \"nome\": \"PharmaMinas Nova Filial\",\n  \"cidade\": \"Ipatinga\",\n  \"estado\": \"MG\",\n  \"endereco\": \"Av. Central, 100\",\n  \"telefone\": \"(31) 3555-0000\",\n  \"ativa\": true\n}"
+            }
+          }
+        },
+        {
+          "name": "Atualizar filial",
+          "request": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/filiais/16",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ativa\": false\n}"
+            }
+          }
+        },
+        {
+          "name": "Deletar filial",
+          "request": {"method": "DELETE", "url": "{{baseUrl}}/api/filiais/16"}
+        }
+      ]
+    },
+    {
+      "name": "Produtos",
+      "item": [
+        {
+          "name": "Listar todos",
+          "request": {"method": "GET", "url": "{{baseUrl}}/api/produtos"}
+        },
+        {
+          "name": "Buscar por nome",
+          "request": {"method": "GET", "url": "{{baseUrl}}/api/produtos?nome=Dipirona"}
+        },
+        {
+          "name": "Filtro combinado",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/produtos?categoria_id=1&preco_max=50&exige_receita=false"
+          }
+        },
+        {
+          "name": "Criar produto",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/produtos",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"codigo_barras\": \"7891111111111\",\n  \"nome\": \"Vitamina D 2000UI 30cp\",\n  \"categoria_id\": 8,\n  \"fabricante\": \"Vitaminex\",\n  \"preco_custo\": 25.00,\n  \"preco_venda\": 55.90,\n  \"estoque_minimo\": 15,\n  \"exige_receita\": false,\n  \"ativo\": true\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Clientes",
+      "item": [
+        {
+          "name": "Listar clientes",
+          "request": {"method": "GET", "url": "{{baseUrl}}/api/clientes?por_pagina=10"}
+        },
+        {
+          "name": "Cliente por ID (com resumo)",
+          "request": {"method": "GET", "url": "{{baseUrl}}/api/clientes/1"}
+        },
+        {
+          "name": "Criar cliente",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/clientes",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Maria Fernanda Silva\",\n  \"cpf\": \"111.444.777-35\",\n  \"email\": \"maria@example.com\",\n  \"telefone\": \"(38) 9999-0000\",\n  \"data_nascimento\": \"1985-06-15\",\n  \"cidade\": \"Montes Claros\",\n  \"estado\": \"MG\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Vendas",
+      "item": [
+        {
+          "name": "Listar vendas",
+          "request": {"method": "GET", "url": "{{baseUrl}}/api/vendas?por_pagina=10"}
+        },
+        {
+          "name": "Vendas de uma filial no periodo",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/vendas?filial_id=1&data_inicio=2026-06-01&data_fim=2026-06-30"
+          }
+        },
+        {
+          "name": "Buscar venda (com itens)",
+          "request": {"method": "GET", "url": "{{baseUrl}}/api/vendas/1"}
+        },
+        {
+          "name": "Criar nova venda",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/vendas",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filial_id\": 1,\n  \"cliente_id\": 5,\n  \"forma_pagamento\": \"PIX\",\n  \"desconto\": 0,\n  \"itens\": [\n    {\"produto_id\": 1, \"quantidade\": 2},\n    {\"produto_id\": 5, \"quantidade\": 1, \"preco_unitario\": 25.90}\n  ]\n}"
+            }
+          }
+        },
+        {
+          "name": "Cancelar venda",
+          "request": {"method": "POST", "url": "{{baseUrl}}/api/vendas/1501/cancelar"}
+        }
+      ]
+    },
+    {
+      "name": "Indicadores",
+      "item": [
+        {
+          "name": "KPIs gerais",
+          "request": {"method": "GET", "url": "{{baseUrl}}/api/indicadores/kpis-gerais"}
+        },
+        {
+          "name": "Faturamento mensal",
+          "request": {"method": "GET", "url": "{{baseUrl}}/api/indicadores/faturamento-mensal?limite=12"}
+        },
+        {
+          "name": "Top 10 produtos",
+          "request": {"method": "GET", "url": "{{baseUrl}}/api/indicadores/top-produtos?limite=10"}
+        },
+        {
+          "name": "Top produtos por quantidade",
+          "request": {"method": "GET", "url": "{{baseUrl}}/api/indicadores/top-produtos?ordem=quantidade&limite=5"}
+        },
+        {
+          "name": "Top filiais",
+          "request": {"method": "GET", "url": "{{baseUrl}}/api/indicadores/top-filiais?limite=5"}
+        },
+        {
+          "name": "Faturamento por categoria",
+          "request": {"method": "GET", "url": "{{baseUrl}}/api/indicadores/faturamento-por-categoria"}
+        },
+        {
+          "name": "Formas de pagamento",
+          "request": {"method": "GET", "url": "{{baseUrl}}/api/indicadores/formas-pagamento"}
+        }
+      ]
+    }
+  ]
+}

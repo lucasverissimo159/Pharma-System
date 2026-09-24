@@ -1,0 +1,22 @@
+# Banco (pode ser regerado com inicializar_banco.py)
+db/*.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs (se algum dia adicionar)
+logs/*.log
