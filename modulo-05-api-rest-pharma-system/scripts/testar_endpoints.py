@@ -289,6 +289,25 @@ def main():
         "filial_id": 1, "forma_pagamento": "PIX",
         "itens": [{"produto_id": 99999, "quantidade": 1}]
     })
+    t.check("multi-item falha no 2o item (produto inexistente) -> 400", "POST", "/api/vendas", 400, json_body={
+        "filial_id": 1,
+        "cliente_id": 1,
+        "forma_pagamento": "PIX",
+        "itens": [
+            {"produto_id": 1, "quantidade": 2},
+            {"produto_id": 99999, "quantidade": 1},
+        ]
+    })
+    t.check("multi-item falha no 2o item (qtd invalida) -> 400", "POST", "/api/vendas", 400, json_body={
+        "filial_id": 1,
+        "cliente_id": 1,
+        "forma_pagamento": "PIX",
+        "itens": [
+            {"produto_id": 1, "quantidade": 2},
+            {"produto_id": 2, "quantidade": -1},
+        ]
+    })
+    t.check("verificar rollback (venda nao gravada apos falha)", "GET", f"/api/vendas/{id_venda_nova + 1}", 404)
     t.check("sem itens -> 400", "POST", "/api/vendas", 400, json_body={
         "filial_id": 1, "forma_pagamento": "PIX", "itens": []
     })

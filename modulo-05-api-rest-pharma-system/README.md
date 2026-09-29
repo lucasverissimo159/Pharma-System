@@ -14,7 +14,7 @@ Rodando localmente com o banco populado dos módulos anteriores:
 |---|---|
 | Endpoints registrados | **37** (a apostila pede ≥15) |
 | Recursos REST | 6 (filiais, categorias, produtos, clientes, vendas, indicadores) |
-| Testes automáticos passando | **60/60** ✅ |
+| Testes automáticos passando | **63/63** ✅ |
 | Faturamento retornado nos indicadores | R$ 226.548,60 |
 | Dependências externas | 1 (só Flask) |
 | Documentação | Swagger UI interativa em `/api/docs` |
@@ -79,7 +79,7 @@ modulo-05-api-rest-pharma-system/
 ├── scripts/
 │   ├── inicializar_banco.py         Popula SQLite dos CSVs
 │   ├── executar_api.py              Roda o servidor
-│   └── testar_endpoints.py          Smoke test (60 casos)
+│   └── testar_endpoints.py          Smoke test (63 casos)
 │
 ├── docs/
 │   ├── arquitetura.md               Design decisions
@@ -163,7 +163,7 @@ Ver mais em `docs/exemplos_curl.md`.
 python scripts/testar_endpoints.py
 ```
 
-60 testes automatizados em ~1 segundo — usa o `test_client` do Flask.
+63 testes automatizados em ~1 segundo — usa o `test_client` do Flask.
 
 ---
 
@@ -251,7 +251,7 @@ Todo erro passa pelo mesmo handler global. Nenhuma rota precisa de `try/except` 
 
 ---
 
-## Prova empírica: 60/60 testes
+## Prova empírica: 63/63 testes
 
 O `scripts/testar_endpoints.py` é um smoke test que cobre:
 
@@ -260,7 +260,7 @@ O `scripts/testar_endpoints.py` é um smoke test que cobre:
 - 5 categorias
 - 10 produtos (CRUD + filtros combinados + validação de preço)
 - 7 clientes (CPF válido, CPF inválido, e-mail inválido, CPF duplicado)
-- 8 vendas (criar com itens, cancelar, forma pagamento inválida, produto inexistente)
+- 11 vendas (criar com itens, cancelar, falhas no 2º item, verificação de rollback após falha)
 - 8 indicadores
 - 3 docs
 - 2 erros globais (404 na rota, 405 no método)
@@ -298,7 +298,7 @@ pharma-system/
 >
 > ✅ **Flask puro** (sem ORM) — decisão didática para expor os fundamentos: cada query SQL, cada validação, cada serialização estão explícitas no código.
 > ✅ **Swagger UI interativa** em `/api/docs` — OpenAPI 3.0 gerado programaticamente com 7 schemas de componentes reutilizáveis.
-> ✅ **60 testes automáticos** cobrindo happy paths + validações + conflitos + 404 + 405 — rodam em 1 segundo com `test_client`.
+> ✅ **63 testes automáticos** cobrindo happy paths + validações + rollback transacional + conflitos + 404 + 405 — rodam em 1 segundo com `test_client`.
 > ✅ **Validação de CPF com dígito verificador**, integridade referencial (não deleta filial com vendas), paginação em todas as listagens.
 > ✅ **Vendas transacionais** — POST com N itens em uma única request, rollback total em caso de erro.
 > ✅ **Indicadores agregados** — KPIs, top produtos, top filiais, faturamento mensal, tudo consumível por dashboards.
